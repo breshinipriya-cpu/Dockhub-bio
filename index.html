@@ -1,0 +1,86 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Incident Monitoring Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1>Secure Incident Monitoring Portal</h1>
+<p>Cybersecurity Dashboard</p>
+</header>
+
+<div class="container">
+
+<div class="sidebar">
+<h2>Menu</h2>
+<ul>
+<li onclick="showSection('dashboard')">Dashboard</li>
+<li onclick="showSection('incident')">Report Incident</li>
+<li onclick="showSection('alerts')">Alerts</li>
+<li onclick="showSection('reports')">Reports</li>
+</ul>
+</div>
+
+<div class="main">
+
+<section id="dashboard" class="section active">
+<h2>Dashboard</h2>
+
+<div class="cards">
+<div class="card">
+<h3>Total Incidents</h3>
+<p id="totalIncidents">0</p>
+</div>
+
+<div class="card">
+<h3>Critical Alerts</h3>
+<p id="criticalAlerts">2</p>
+</div>
+
+<div class="card">
+<h3>Resolved</h3>
+<p id="resolvedIncidents">0</p>
+</div>
+</div>
+
+</section>
+
+<section id="incident" class="section">
+<h2>Report New Incident</h2>
+
+<input type="text" id="title" placeholder="Incident Title">
+<textarea id="description" placeholder="Description"></textarea>
+
+<select id="severity">
+<option>Low</option>
+<option>Medium</option>
+<option>High</option>
+<option>Critical</option>
+</select>
+
+<button onclick="addIncident()">Submit Incident</button>
+
+</section>
+
+<section id="alerts" class="section">
+<h2>Incident Alerts</h2>
+<ul id="incidentList"></ul>
+</section>
+
+<section id="reports" class="section">
+<h2>Reports</h2>
+<button onclick="downloadReport()">Download Report</button>
+</section>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
