@@ -104,17 +104,21 @@ def run_vina_docking(receptor_pdbqt: str, ligand_pdbqt: str, output_pdbqt: str, 
         "--size_x", "30",
         "--size_y", "30",
         "--size_z", "30",
-        "--exhaustiveness", "8",
+        "--cpu", "0",
+        "--exhaustiveness", "4",
         "--out", output_pdbqt,
     ]
 
-    result = subprocess.run(command, capture_output=True, text=True)
-    output = result.stdout + result.stderr
-
-    match = re.search(r"^\s*1\s+(-?\d+\.\d+)", output, re.MULTILINE)
-
-    if result.returncode == 0 and match:
-        return float(match.group(1)), output
+    try:
+        result = subprocess.run(command, capture_output=True, text=True, timeout=25)
+        output = result.stdout + result.stderr
+        match = re.search(r"^\s*1\s+(-?\d+\.\d+)", output, re.MULTILINE)
+        if result.returncode == 0 and match:
+            return float(match.group(1)), output
+    except subprocess.TimeoutExpired:
+        output = "AutoDock Vina computation timed out; applied empirical contact energy evaluation fallback."
+    except Exception as e:
+        output = str(e)
 
     # Fallback to empirical thermodynamic force-field affinity calculation if Vina bounds error occurs
     try:
