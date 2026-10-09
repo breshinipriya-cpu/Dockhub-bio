@@ -19,7 +19,7 @@ class MobileHTMLReporter:
         json_dir = os.path.join(AppiumConfig.REPORTS_DIR, "JSON")
         os.makedirs(json_dir, exist_ok=True)
         json_file = os.path.join(json_dir, "execution-results.json")
-        with open(json_file, "w") as f:
+        with open(json_file, "w", encoding="utf-8") as f:
             json.dump({
                 "total": total,
                 "passed": passed,
