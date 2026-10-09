@@ -24,6 +24,7 @@ def get_headless_driver():
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-gpu")
     options.add_argument("--window-size=1920,1080")
+    options.add_argument("--remote-allow-origins=*")
     
     driver = webdriver.Chrome(options=options)
     driver.implicitly_wait(Config.IMPLICIT_WAIT)
