@@ -54,12 +54,26 @@ def download_ligand_sdf(cid: str) -> str | None:
     if sdf_path.exists() and sdf_path.stat().st_size > 0:
         return str(sdf_path)
 
-    url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{cid}/SDF?record_type=3d"
-    response = requests.get(url, timeout=30)
-    if response.status_code != 200:
-        return None
+    # Try 3D conformer SDF first
+    url_3d = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{cid}/SDF?record_type=3d"
+    try:
+        response = requests.get(url_3d, timeout=30)
+        if response.status_code == 200 and len(response.content) > 0:
+            with open(sdf_path, "wb") as f:
+                f.write(response.content)
+            return str(sdf_path)
+    except Exception:
+        pass
 
-    with open(sdf_path, "wb") as f:
-        f.write(response.content)
+    # Fallback to standard 2D SDF if 3D conformer is not pre-computed in PubChem
+    url_2d = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{cid}/SDF"
+    try:
+        response = requests.get(url_2d, timeout=30)
+        if response.status_code == 200 and len(response.content) > 0:
+            with open(sdf_path, "wb") as f:
+                f.write(response.content)
+            return str(sdf_path)
+    except Exception:
+        pass
 
-    return str(sdf_path)
+    return None
