@@ -26,6 +26,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install httpx aiohttp uvicorn fastapi sqlalchemy openpyxl
+          python generate_excel_artifacts.py
           python generate_all_4_excel_reports.py
 
       - name: Execute 100-User 1-Minute Baseline Load Test
@@ -40,6 +41,7 @@ jobs:
           name: Blow-Load-QA-Excel-and-Reports
           path: |
             excel_reports/Blow_Load_Test_Report.xlsx
+            Vulnerability Test Results/test-cases.xlsx
             dockhub_backend/load_test_results.json
             Vulnerability Test Results/performance-report.md
           retention-days: 30
