@@ -34,9 +34,65 @@ def calculate_receptor_center(protein_pdb_path: str) -> tuple[float, float, floa
     return (round(center_x, 3), round(center_y, 3), round(center_z, 3))
 
 
+def align_pdbqt_for_vina(file_path: str):
+    if not os.path.exists(file_path):
+        return
+    lines = []
+    with open(file_path, "r", encoding="utf-8", errors="replace") as f:
+        for idx, l in enumerate(f, 1):
+            if l.startswith(("ATOM", "HETATM")):
+                try:
+                    x = float(l[30:38])
+                    y = float(l[38:46])
+                    z = float(l[46:54])
+                    atom_name = l[12:16].strip() or "CA"
+                    raw_elem = atom_name[0].upper() if atom_name and atom_name[0].isalpha() else "C"
+                    elem = "N" if raw_elem == "N" else "O" if raw_elem == "O" else "S" if raw_elem == "S" else "C"
+                    lines.append(f"ATOM  {idx:5d}  {atom_name:<3} ALA A   1    {x:8.3f}{y:8.3f}{z:8.3f}  1.00  0.00    {0.0:6.3f} {elem:<2}\n")
+                except Exception:
+                    pass
+            else:
+                lines.append(l)
+
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.writelines(lines)
+
+
+def align_ligand_pdbqt_for_vina(file_path: str):
+    if not os.path.exists(file_path):
+        return
+    lines = []
+    with open(file_path, "r", encoding="utf-8", errors="replace") as f:
+        for l in f:
+            if l.startswith(("ATOM", "HETATM")):
+                parts = l.split()
+                if len(parts) >= 12:
+                    try:
+                        idx = int(parts[1])
+                        aname = parts[2]
+                        res = parts[3][:3]
+                        num = int(parts[4])
+                        x, y, z = float(parts[5]), float(parts[6]), float(parts[7])
+                        q = float(parts[10])
+                        atype = parts[11]
+                        lines.append(f"ATOM  {idx:5d} {aname:<4} {res:>3} A{num:4d}    {x:8.3f}{y:8.3f}{z:8.3f}  1.00  0.00    {q:+6.3f} {atype:<2}\n")
+                    except Exception:
+                        lines.append(l)
+                else:
+                    lines.append(l)
+            else:
+                lines.append(l)
+
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.writelines(lines)
+
+
 def run_vina_docking(receptor_pdbqt: str, ligand_pdbqt: str, output_pdbqt: str, protein_pdb_path: str) -> tuple[float | None, str]:
     center_x, center_y, center_z = calculate_receptor_center(protein_pdb_path)
     os.makedirs(os.path.dirname(output_pdbqt), exist_ok=True)
+
+    align_pdbqt_for_vina(receptor_pdbqt)
+    align_ligand_pdbqt_for_vina(ligand_pdbqt)
 
     command = [
         VINA_EXE,
@@ -108,6 +164,7 @@ def convert_protein_to_pdbqt(protein_pdb_path: str) -> str | None:
     output_path = str(DOCKING_FILES_DIR / "pdbqt" / f"{protein_name}_protein.pdbqt")
 
     if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
+        align_pdbqt_for_vina(output_path)
         return output_path
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
@@ -117,6 +174,7 @@ def convert_protein_to_pdbqt(protein_pdb_path: str) -> str | None:
         command = [OPENBABEL_EXE, "-ipdb", protein_pdb_path, "-opdbqt", "-O", output_path, "-xr", "-h"]
         res = subprocess.run(command, capture_output=True, text=True)
         if res.returncode == 0 and os.path.exists(output_path) and os.path.getsize(output_path) > 0:
+            align_pdbqt_for_vina(output_path)
             return output_path
 
     # Method 2: Try MGLTools prepare_receptor4.py
@@ -124,18 +182,24 @@ def convert_protein_to_pdbqt(protein_pdb_path: str) -> str | None:
         command = [MGLTOOLS_PYTHON, PREPARE_RECEPTOR, "-r", protein_pdb_path, "-o", output_path, "-A", "hydrogens"]
         res = subprocess.run(command, capture_output=True, text=True)
         if res.returncode == 0 and os.path.exists(output_path) and os.path.getsize(output_path) > 0:
+            align_pdbqt_for_vina(output_path)
             return output_path
 
     # Method 3: Native Resilient PDBQT Generator
     try:
         with open(protein_pdb_path, "r", encoding="utf-8", errors="replace") as fin, open(output_path, "w", encoding="utf-8") as fout:
-            for line in fin:
+            for idx, line in enumerate(fin, 1):
                 if line.startswith(("ATOM  ", "HETATM")):
-                    atom_name = line[12:16].strip()
-                    elem = atom_name[0].upper() if atom_name else "C"
-                    line_clean = f"{line[:66]}  0.000 {elem:<2}\n"
-                    fout.write(line_clean)
+                    try:
+                        x, y, z = float(line[30:38]), float(line[38:46]), float(line[46:54])
+                        atom_name = line[12:16].strip() or "CA"
+                        raw_elem = atom_name[0].upper() if atom_name and atom_name[0].isalpha() else "C"
+                        elem = "N" if raw_elem == "N" else "O" if raw_elem == "O" else "S" if raw_elem == "S" else "C"
+                        fout.write(f"ATOM  {idx:5d}  {atom_name:<3} ALA A   1    {x:8.3f}{y:8.3f}{z:8.3f}  1.00  0.00    {0.0:6.3f} {elem:<2}\n")
+                    except Exception:
+                        pass
         if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
+            align_pdbqt_for_vina(output_path)
             return output_path
     except Exception:
         pass
@@ -148,6 +212,7 @@ def convert_ligand_to_pdbqt(ligand_sdf_path: str) -> str | None:
     output_path = str(DOCKING_FILES_DIR / "pdbqt" / f"{ligand_name}_ligand.pdbqt")
 
     if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
+        align_ligand_pdbqt_for_vina(output_path)
         return output_path
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
@@ -157,12 +222,14 @@ def convert_ligand_to_pdbqt(ligand_sdf_path: str) -> str | None:
         command = [OPENBABEL_EXE, ligand_sdf_path, "-O", output_path, "--gen3d", "-h"]
         res = subprocess.run(command, capture_output=True, text=True)
         if res.returncode == 0 and os.path.exists(output_path) and os.path.getsize(output_path) > 0:
+            align_ligand_pdbqt_for_vina(output_path)
             return output_path
 
         # Method 2: Standard OpenBabel without --gen3d
         command2 = [OPENBABEL_EXE, ligand_sdf_path, "-O", output_path]
         res2 = subprocess.run(command2, capture_output=True, text=True)
         if res2.returncode == 0 and os.path.exists(output_path) and os.path.getsize(output_path) > 0:
+            align_ligand_pdbqt_for_vina(output_path)
             return output_path
 
     # Method 3: Native Resilient Ligand PDBQT Generator from SDF coordinates
@@ -184,9 +251,14 @@ def convert_ligand_to_pdbqt(ligand_sdf_path: str) -> str | None:
             with open(output_path, "w", encoding="utf-8") as fout:
                 fout.write("ROOT\n")
                 for idx, (x, y, z, elem) in enumerate(atoms, 1):
-                    fout.write(f"ATOM  {idx:5d} {elem:<4} LIG A   1    {x:8.3f}{y:8.3f}{z:8.3f}  1.00  0.00          {elem:<2}\n")
+                    fout.write(f"ATOM  {idx:5d} {elem:<4} LIG A   1    {x:8.3f}{y:8.3f}{z:8.3f}  1.00  0.00    +0.000 {elem:<2}\n")
                 fout.write("ENDROOT\nTORSDOF 0\n")
+            align_ligand_pdbqt_for_vina(output_path)
             return output_path
+    except Exception:
+        pass
+
+    return None
     except Exception:
         pass
 
