@@ -214,3 +214,12 @@ button:hover {
     background-color: var(--danger);
     color: #fff;
 }
+
+footer {
+    background-color: var(--bg-secondary);
+    padding: 16px 40px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-secondary);
+}

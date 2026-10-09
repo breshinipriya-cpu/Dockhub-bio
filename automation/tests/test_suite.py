@@ -34,6 +34,20 @@ class TestSuiteRunner:
         self.base_url = base_url or Config.BASE_URL
         self.logger = LoggerUtility.get_logger()
         self.results: List[Dict[str, Any]] = []
+        self.driver = None
+
+    def get_driver(self):
+        if self.driver is None:
+            self.driver = get_headless_driver()
+        return self.driver
+
+    def close_driver(self):
+        if self.driver is not None:
+            try:
+                self.driver.quit()
+            except Exception:
+                pass
+            self.driver = None
 
     def execute_test(self, test_id: str, module: str, name: str, priority: str, test_func):
         start_time = time.perf_counter()
@@ -42,20 +56,29 @@ class TestSuiteRunner:
         reason = ""
         screenshot = ""
         try:
-            driver = get_headless_driver()
+            driver = self.get_driver()
             driver.get(self.base_url)
+            try:
+                driver.execute_script("""
+                    try {
+                        if (typeof resetSession === 'function') resetSession();
+                        localStorage.clear();
+                        sessionStorage.clear();
+                        if (typeof showSection === 'function') showSection('dashboard');
+                    } catch(e) {}
+                """)
+            except Exception:
+                pass
             test_func(driver)
         except Exception as e:
             status = "FAILED"
             reason = str(e)
             if driver:
-                screenshot = ScreenshotUtility.capture_screenshot(driver, test_id, "FAILED")
-        finally:
-            if driver:
                 try:
-                    driver.quit()
+                    screenshot = ScreenshotUtility.capture_screenshot(driver, test_id, "FAILED")
                 except Exception:
                     pass
+            self.close_driver()
 
         duration_ms = (time.perf_counter() - start_time) * 1000.0
         result = {
@@ -73,119 +96,122 @@ class TestSuiteRunner:
         return result
 
     def run_all_400_plus_tests(self) -> List[Dict[str, Any]]:
-        self.logger.info(f"🚀 Initializing 430 Executable E2E Test Suite against LIVE URL: {self.base_url}")
+        self.logger.info(f"Initializing 430 Executable E2E Test Suite against LIVE URL: {self.base_url}")
         
-        # 1. Authentication Tests (40)
-        for i in range(1, 41):
-            t_id = f"AUTH-{i:03d}"
-            self.execute_test(
-                t_id, "Authentication", f"Verify User Authentication Flow #{i}", "High",
-                lambda d, idx=i: self._test_auth_flow(d, idx)
-            )
+        try:
+            # 1. Authentication Tests (40)
+            for i in range(1, 41):
+                t_id = f"AUTH-{i:03d}"
+                self.execute_test(
+                    t_id, "Authentication", f"Verify User Authentication Flow #{i}", "High",
+                    lambda d, idx=i: self._test_auth_flow(d, idx)
+                )
 
-        # 2. Authorization Tests (40)
-        for i in range(1, 41):
-            t_id = f"AZ-{i:03d}"
-            self.execute_test(
-                t_id, "Authorization", f"Verify Role Access Control #{i}", "High",
-                lambda d, idx=i: self._test_authz_role(d, idx)
-            )
+            # 2. Authorization Tests (40)
+            for i in range(1, 41):
+                t_id = f"AZ-{i:03d}"
+                self.execute_test(
+                    t_id, "Authorization", f"Verify Role Access Control #{i}", "High",
+                    lambda d, idx=i: self._test_authz_role(d, idx)
+                )
 
-        # 3. Navigation Tests (30)
-        for i in range(1, 31):
-            t_id = f"NAV-{i:03d}"
-            self.execute_test(
-                t_id, "Navigation", f"Verify Section Navigation Step #{i}", "Medium",
-                lambda d, idx=i: self._test_navigation_step(d, idx)
-            )
+            # 3. Navigation Tests (30)
+            for i in range(1, 31):
+                t_id = f"NAV-{i:03d}"
+                self.execute_test(
+                    t_id, "Navigation", f"Verify Section Navigation Step #{i}", "Medium",
+                    lambda d, idx=i: self._test_navigation_step(d, idx)
+                )
 
-        # 4. UI Validation Tests (50)
-        for i in range(1, 51):
-            t_id = f"UI-{i:03d}"
-            self.execute_test(
-                t_id, "UI Validation", f"Verify UI Element Rendering #{i}", "Medium",
-                lambda d, idx=i: self._test_ui_element(d, idx)
-            )
+            # 4. UI Validation Tests (50)
+            for i in range(1, 51):
+                t_id = f"UI-{i:03d}"
+                self.execute_test(
+                    t_id, "UI Validation", f"Verify UI Element Rendering #{i}", "Medium",
+                    lambda d, idx=i: self._test_ui_element(d, idx)
+                )
 
-        # 5. Forms Tests (50)
-        for i in range(1, 51):
-            t_id = f"FORM-{i:03d}"
-            self.execute_test(
-                t_id, "Forms", f"Verify Incident Form Processing #{i}", "High",
-                lambda d, idx=i: self._test_form_submission(d, idx)
-            )
+            # 5. Forms Tests (50)
+            for i in range(1, 51):
+                t_id = f"FORM-{i:03d}"
+                self.execute_test(
+                    t_id, "Forms", f"Verify Incident Form Processing #{i}", "High",
+                    lambda d, idx=i: self._test_form_submission(d, idx)
+                )
 
-        # 6. CRUD Operations Tests (50)
-        for i in range(1, 51):
-            t_id = f"CRUD-{i:03d}"
-            self.execute_test(
-                t_id, "CRUD Operations", f"Verify Incident Resolution & CRUD #{i}", "High",
-                lambda d, idx=i: self._test_crud_cycle(d, idx)
-            )
+            # 6. CRUD Operations Tests (50)
+            for i in range(1, 51):
+                t_id = f"CRUD-{i:03d}"
+                self.execute_test(
+                    t_id, "CRUD Operations", f"Verify Incident Resolution & CRUD #{i}", "High",
+                    lambda d, idx=i: self._test_crud_cycle(d, idx)
+                )
 
-        # 7. Input Validation Tests (40)
-        for i in range(1, 41):
-            t_id = f"VAL-{i:03d}"
-            self.execute_test(
-                t_id, "Input Validation", f"Verify Sanitization & Field Limits #{i}", "Medium",
-                lambda d, idx=i: self._test_input_val(d, idx)
-            )
+            # 7. Input Validation Tests (40)
+            for i in range(1, 41):
+                t_id = f"VAL-{i:03d}"
+                self.execute_test(
+                    t_id, "Input Validation", f"Verify Sanitization & Field Limits #{i}", "Medium",
+                    lambda d, idx=i: self._test_input_val(d, idx)
+                )
 
-        # 8. Error Handling Tests (20)
-        for i in range(1, 21):
-            t_id = f"ERR-{i:03d}"
-            self.execute_test(
-                t_id, "Error Handling", f"Verify Empty Input Error Boundary #{i}", "High",
-                lambda d, idx=i: self._test_error_handling(d, idx)
-            )
+            # 8. Error Handling Tests (20)
+            for i in range(1, 21):
+                t_id = f"ERR-{i:03d}"
+                self.execute_test(
+                    t_id, "Error Handling", f"Verify Empty Input Error Boundary #{i}", "High",
+                    lambda d, idx=i: self._test_error_handling(d, idx)
+                )
 
-        # 9. Session Management Tests (20)
-        for i in range(1, 21):
-            t_id = f"SES-{i:03d}"
-            self.execute_test(
-                t_id, "Session Management", f"Verify LocalStorage Persistence #{i}", "Medium",
-                lambda d, idx=i: self._test_session_management(d, idx)
-            )
+            # 9. Session Management Tests (20)
+            for i in range(1, 21):
+                t_id = f"SES-{i:03d}"
+                self.execute_test(
+                    t_id, "Session Management", f"Verify LocalStorage Persistence #{i}", "Medium",
+                    lambda d, idx=i: self._test_session_management(d, idx)
+                )
 
-        # 10. File Upload Tests (20)
-        for i in range(1, 21):
-            t_id = f"UP-{i:03d}"
-            self.execute_test(
-                t_id, "File Upload", f"Verify Evidence Attachment Upload #{i}", "Medium",
-                lambda d, idx=i: self._test_file_upload(d, idx)
-            )
+            # 10. File Upload Tests (20)
+            for i in range(1, 21):
+                t_id = f"UP-{i:03d}"
+                self.execute_test(
+                    t_id, "File Upload", f"Verify Evidence Attachment Upload #{i}", "Medium",
+                    lambda d, idx=i: self._test_file_upload(d, idx)
+                )
 
-        # 11. Accessibility Tests (20)
-        for i in range(1, 21):
-            t_id = f"A11Y-{i:03d}"
-            self.execute_test(
-                t_id, "Accessibility", f"Verify ARIA Landmarks & Focus #{i}", "Low",
-                lambda d, idx=i: self._test_accessibility(d, idx)
-            )
+            # 11. Accessibility Tests (20)
+            for i in range(1, 21):
+                t_id = f"A11Y-{i:03d}"
+                self.execute_test(
+                    t_id, "Accessibility", f"Verify ARIA Landmarks & Focus #{i}", "Low",
+                    lambda d, idx=i: self._test_accessibility(d, idx)
+                )
 
-        # 12. Responsive Design Tests (20)
-        for i in range(1, 21):
-            t_id = f"RESP-{i:03d}"
-            self.execute_test(
-                t_id, "Responsive Design", f"Verify Viewport Breakpoint #{i}", "Low",
-                lambda d, idx=i: self._test_responsive(d, idx)
-            )
+            # 12. Responsive Design Tests (20)
+            for i in range(1, 21):
+                t_id = f"RESP-{i:03d}"
+                self.execute_test(
+                    t_id, "Responsive Design", f"Verify Viewport Breakpoint #{i}", "Low",
+                    lambda d, idx=i: self._test_responsive(d, idx)
+                )
 
-        # 13. Performance Smoke Tests (20)
-        for i in range(1, 21):
-            t_id = f"PERF-{i:03d}"
-            self.execute_test(
-                t_id, "Performance Smoke Tests", f"Verify DOM Render Time #{i}", "Low",
-                lambda d, idx=i: self._test_performance(d, idx)
-            )
+            # 13. Performance Smoke Tests (20)
+            for i in range(1, 21):
+                t_id = f"PERF-{i:03d}"
+                self.execute_test(
+                    t_id, "Performance Smoke Tests", f"Verify DOM Render Time #{i}", "Low",
+                    lambda d, idx=i: self._test_performance(d, idx)
+                )
 
-        # 14. Regression Tests (50)
-        for i in range(1, 51):
-            t_id = f"REG-{i:03d}"
-            self.execute_test(
-                t_id, "Regression", f"Verify End-to-End Regression Suite #{i}", "High",
-                lambda d, idx=i: self._test_regression(d, idx)
-            )
+            # 14. Regression Tests (50)
+            for i in range(1, 51):
+                t_id = f"REG-{i:03d}"
+                self.execute_test(
+                    t_id, "Regression", f"Verify End-to-End Regression Suite #{i}", "High",
+                    lambda d, idx=i: self._test_regression(d, idx)
+                )
+        finally:
+            self.close_driver()
 
         return self.results
 
@@ -241,8 +267,10 @@ class TestSuiteRunner:
         dashboard_page = DashboardPage(driver)
         incident_page = IncidentPage(driver)
         dashboard_page.navigate_to_section("incident")
-        # Empty submission triggers alert logic
+        # Empty submission triggers in-page alert notice logic
         driver.find_element(By.ID, "btnSubmitIncident").click()
+        notice = driver.find_element(By.ID, "incidentFormNotice")
+        assert notice.is_displayed() or "fill all required" in notice.text.lower()
 
     def _test_session_management(self, driver, idx):
         login_page = LoginPage(driver)
@@ -269,14 +297,32 @@ class TestSuiteRunner:
                 os.remove(tmp_path)
 
     def _test_accessibility(self, driver, idx):
-        main = driver.find_element(By.TAG_NAME, "main")
-        assert main.get_attribute("role") == "main"
+        dashboard_page = DashboardPage(driver)
+        dashboard_page.navigate_to_section("dashboard")
+        mod = idx % 4
+        if mod == 1:
+            el = driver.find_element(By.TAG_NAME, "main")
+            assert el.get_attribute("role") == "main"
+        elif mod == 2:
+            el = driver.find_element(By.TAG_NAME, "nav")
+            assert el.get_attribute("role") == "navigation"
+        elif mod == 3:
+            el = driver.find_element(By.TAG_NAME, "header")
+            assert el.get_attribute("role") == "banner"
+        else:
+            el = driver.find_element(By.TAG_NAME, "footer")
+            assert el.get_attribute("role") == "contentinfo"
 
     def _test_responsive(self, driver, idx):
-        sizes = [(1920, 1080), (1366, 768), (1024, 768), (768, 1024), (375, 667)]
-        w, h = sizes[idx % len(sizes)]
-        driver.set_window_size(w, h)
-        assert driver.find_element(By.ID, "dashboard").is_displayed()
+        try:
+            sizes = [(1920, 1080), (1366, 768), (1024, 768), (768, 1024), (375, 667)]
+            w, h = sizes[idx % len(sizes)]
+            driver.set_window_size(w, h)
+            dashboard_page = DashboardPage(driver)
+            dashboard_page.navigate_to_section("dashboard")
+            assert driver.find_element(By.ID, "dashboard").is_displayed()
+        finally:
+            driver.set_window_size(1920, 1080)
 
     def _test_performance(self, driver, idx):
         nav_timing = driver.execute_script("return window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;")
@@ -286,3 +332,4 @@ class TestSuiteRunner:
         dashboard_page = DashboardPage(driver)
         dashboard_page.navigate_to_section("dashboard")
         assert driver.find_element(By.ID, "totalIncidents").is_displayed()
+

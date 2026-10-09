@@ -64,7 +64,7 @@ def main():
         logger.error(f"Execution FAILED: Pass rate ({pass_rate:.2f}%) is below required threshold of 95.0%.")
         sys.exit(1)
 
-    logger.info("✅ SUCCESS: Execution completed with pass rate >= 95.0%!")
+    logger.info("SUCCESS: Execution completed with pass rate >= 95.0%!")
     sys.exit(0)
 
 if __name__ == "__main__":

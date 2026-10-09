@@ -52,6 +52,13 @@ function handleLogout() {
     showAuthMessage('Logged out successfully.', 'info');
 }
 
+function resetSession() {
+    currentUser = null;
+    localStorage.clear();
+    sessionStorage.clear();
+    updateSessionUI();
+}
+
 function checkSession() {
     const saved = localStorage.getItem('dockhub_user');
     if (saved) {
@@ -95,7 +102,12 @@ function addIncident() {
     const severity = document.getElementById('severity')?.value || 'Low';
 
     if (!title.trim() || !desc.trim()) {
-        alert('Please fill all required fields.');
+        const alertBox = document.getElementById('incidentFormNotice');
+        if (alertBox) {
+            alertBox.innerText = 'Please fill all required fields.';
+            alertBox.className = 'alert-notice error';
+            alertBox.style.display = 'block';
+        }
         return;
     }
 

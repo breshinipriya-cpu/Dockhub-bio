@@ -1,4 +1,5 @@
 import sys
+import os
 import time
 import requests
 from urllib.parse import urljoin
@@ -12,6 +13,14 @@ def verify_deployment(base_url: str = None, retries: int = 12, delay: int = 10) 
 
     for attempt in range(1, retries + 1):
         try:
+            if url.startswith("file://"):
+                file_path = url.replace("file:///", "").replace("file://", "")
+                if os.path.exists(file_path):
+                    logger.info("Local HTML file verified successfully.")
+                    return True
+                else:
+                    logger.warning("Local HTML file path does not exist.")
+                    return False
             response = requests.get(url, timeout=15)
             logger.info(f"[Attempt {attempt}/{retries}] Status code: {response.status_code}")
 

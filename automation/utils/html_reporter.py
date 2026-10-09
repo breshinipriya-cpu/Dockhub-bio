@@ -19,7 +19,7 @@ class HTMLReporter:
         json_dir = os.path.join(Config.REPORTS_DIR, "JSON")
         os.makedirs(json_dir, exist_ok=True)
         json_path = os.path.join(json_dir, "execution-results.json")
-        with open(json_path, "w") as f:
+        with open(json_path, "w", encoding="utf-8") as f:
             json.dump({
                 "total": total,
                 "passed": passed,
@@ -71,7 +71,7 @@ class HTMLReporter:
     </style>
 </head>
 <body>
-    <h1>🚀 Live E2E Automation Execution Report</h1>
+    <h1>Live E2E Automation Execution Report</h1>
     <p>Target Environment: <code>{Config.BASE_URL}</code></p>
     
     <div class="metrics">
@@ -99,13 +99,13 @@ class HTMLReporter:
 </body>
 </html>"""
 
-        with open(report_file, "w") as f:
+        with open(report_file, "w", encoding="utf-8") as f:
             f.write(html_content)
 
         # File 2: dashboard.html
         dashboard_file = os.path.join(target_dir, "dashboard.html")
         dashboard_content = html_content.replace("Execution Report", "Executive Quality Dashboard")
-        with open(dashboard_file, "w") as f:
+        with open(dashboard_file, "w", encoding="utf-8") as f:
             f.write(dashboard_content)
 
         return {
