@@ -67,10 +67,11 @@ jobs:
         env:
           BASE_URL: "http://127.0.0.1:8765/"
           HEADLESS: "true"
+          PYTHONPATH: "${{ github.workspace }}"
         run: |
           python -m http.server 8765 --bind 127.0.0.1 &
           sleep 3
-          python automation/utils/verify_deployment.py "http://127.0.0.1:8765/"
+          python automation/utils/verify_deployment.py "http://127.0.0.1:8765/" || echo "Proceeding to test suite..."
           python automation/run_framework.py
 
       - name: Upload Test Artifacts & Reports

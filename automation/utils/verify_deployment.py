@@ -1,6 +1,12 @@
 import sys
 import os
 import time
+
+# Ensure repository root is in sys.path
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+if BASE_DIR not in sys.path:
+    sys.path.insert(0, BASE_DIR)
+
 import requests
 from urllib.parse import urljoin
 from automation.config.config import Config
@@ -28,7 +34,7 @@ def verify_deployment(base_url: str = None, retries: int = 12, delay: int = 10) 
                 html_content = response.text
                 
                 # Check for mandatory HTML structure
-                if "<html" in html_content and "</html" in html_content:
+                if "<html" in html_content.lower() and "</html>" in html_content.lower():
                     logger.info("Main HTML page rendered successfully.")
                 else:
                     logger.warning("Main page did not contain valid HTML tags.")
