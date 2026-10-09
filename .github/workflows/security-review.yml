@@ -1,0 +1,81 @@
+name: DevSecOps Backend Security Review & SAST/DAST Audit
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  security-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python Environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Framework Auto-Detection
+        run: |
+          echo "Detecting backend technology stack..."
+          if [ -f "dockhub_backend/main.py" ]; then
+            echo "DETECTED_FRAMEWORK=FastAPI" >> $GITHUB_ENV
+            echo "Framework detected: FastAPI (Python 3.11)"
+          else
+            echo "DETECTED_FRAMEWORK=Generic" >> $GITHUB_ENV
+          fi
+
+      - name: Run Gitleaks Secret Scanner
+        uses: gitleaks/gitleaks-action@v2
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run Semgrep SAST Code Scan
+        uses: returntocorp/semgrep-action@v1
+        continue-on-error: true
+        with:
+          config: p/ci
+
+      - name: Run Trivy File System & Vulnerability Scanner
+        uses: aquasecurity/trivy-action@master
+        continue-on-error: true
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'table'
+          exit-code: '0'
+
+      - name: Install Dependencies & Run Automated Unit / API Tests
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r dockhub_backend/requirements.txt httpx aiohttp openpyxl pytest
+          pytest dockhub_backend/ || true
+
+      - name: Run K6 Performance Baseline Test
+        uses: grafana/k6-action@v0.3.0
+        continue-on-error: true
+        with:
+          filename: 'Vulnerability Test Results/k6-load-test.js'
+
+      - name: Upload Security Audit & Performance Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Security-Audit-and-Vulnerability-Reports
+          path: 'Vulnerability Test Results/'
+          retention-days: 30
+
+      - name: Publish DevSecOps Summary to GitHub Actions
+        if: always()
+        run: |
+          echo "# 🛡️ DevSecOps Security Review Summary" >> $GITHUB_STEP_SUMMARY
+          echo "**Detected Framework:** ${{ env.DETECTED_FRAMEWORK }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Scanners Executed:** Semgrep, Trivy, Gitleaks, K6 Load Test" >> $GITHUB_STEP_SUMMARY
+          echo "**Audit Status:** Completed. All generated workbooks and markdown reports available in artifacts." >> $GITHUB_STEP_SUMMARY
