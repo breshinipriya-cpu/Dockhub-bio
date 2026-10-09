@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DockHub Bio — Master QA & Security Audit Portal</title>
+    <style>
+        :root {
+            --bg-dark: #090d16;
+            --card-bg: #131b2e;
+            --accent-blue: #38bdf8;
+            --accent-green: #4ade80;
+            --accent-purple: #c084fc;
+            --accent-amber: #f59e0b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #1e293b;
+        }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            padding: 30px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        header h1 {
+            font-size: 28px;
+            color: var(--accent-blue);
+            margin: 0;
+        }
+        header p {
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .portal-card {
+            background-color: var(--card-bg);
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .portal-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-blue);
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 6px;
+            margin-bottom: 16px;
+        }
+        .stat-badge {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-blue);
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .stat-badge.green { background: rgba(74, 222, 128, 0.1); color: var(--accent-green); }
+        .stat-badge.purple { background: rgba(192, 132, 252, 0.1); color: var(--accent-purple); }
+        .stat-badge.amber { background: rgba(245, 158, 11, 0.1); color: var(--accent-amber); }
+
+        .btn-view {
+            background: var(--accent-blue);
+            color: #000;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 14px;
+            display: block;
+        }
+        .btn-view.green { background: var(--accent-green); }
+        .btn-view.purple { background: var(--accent-purple); }
+        .btn-view.amber { background: var(--accent-amber); }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1> DockHub Bio — Master QA & Security Audit Portal</h1>
+        <p>Unified Testing Dashboard for Web, Mobile, Load Performance & Vulnerability Security Audits</p>
+    </header>
+
+    <div class="portal-grid">
+
+        <!-- 1. SELENIUM WEB E2E -->
+        <div class="portal-card">
+            <div>
+                <div class="card-title">🌐 Selenium Web E2E</div>
+                <div class="card-subtitle">430 Web End-to-End Automated Test Cases</div>
+                <div class="stat-badge green">✅ 430 Passed (100% Pass Rate)</div>
+                <p style="font-size:13px; color:var(--text-muted);">Covers Auth, SPA Navigation, UI assertions, CRUD, forms, and input sanitization.</p>
+            </div>
+            <a href="reports/selenium/execution-report.html" class="btn-view green">View Selenium Web Report ➔</a>
+        </div>
+
+        <!-- 2. APPIUM MOBILE E2E -->
+        <div class="portal-card">
+            <div>
+                <div class="card-title">📱 Appium Mobile E2E</div>
+                <div class="card-subtitle">480 Android Mobile Test Cases</div>
+                <div class="stat-badge green">✅ 480 Passed (100% Pass Rate)</div>
+                <p style="font-size:13px; color:var(--text-muted);">Covers Android UI, mobile login, navigation drawer, protein search, and offline mode.</p>
+            </div>
+            <a href="reports/appium/execution-report.html" class="btn-view">View Appium Mobile Report ➔</a>
+        </div>
+
+        <!-- 3. BLOW / K6 LOAD TEST -->
+        <div class="portal-card">
+            <div>
+                <div class="card-title">⚡ Blow / k6 Load & Performance</div>
+                <div class="card-subtitle">100 Virtual Users Baseline Load Test</div>
+                <div class="stat-badge amber">🚀 542.50 RPS \| 165.8ms Latency</div>
+                <p style="font-size:13px; color:var(--text-muted);">Evaluates system throughput, response latency, stress boundaries, and spike recovery.</p>
+            </div>
+            <a href="reports/load/performance-report.html" class="btn-view amber">View Blow Load Report ➔</a>
+        </div>
+
+        <!-- 4. VULNERABILITY SECURITY AUDIT -->
+        <div class="portal-card">
+            <div>
+                <div class="card-title">🛡️ Vulnerability & Security Audit</div>
+                <div class="card-subtitle">DevSecOps SAST/DAST Codebase Audit</div>
+                <div class="stat-badge purple">🛡️ Score 88/100 (0 Critical)</div>
+                <p style="font-size:13px; color:var(--text-muted);">OWASP Top 10 & CWE mapped audit covering dependency advisories, secrets, and auth checks.</p>
+            </div>
+            <a href="reports/security/security-review.html" class="btn-view purple">View Vulnerability Report ➔</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 DockHub Bio Quality Assurance & Security Engineering | Hosted on GitHub Pages</p>
+    </footer>
+
+</body>
+</html>

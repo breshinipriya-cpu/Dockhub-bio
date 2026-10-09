@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blow / k6 Load & Performance Report - DockHub Bio</title>
+    <style>
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 24px; }
+        h1 { color: #38bdf8; font-size: 24px; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 20px 0; }
+        .card { background: #1e293b; padding: 20px; border-radius: 10px; border: 1px solid #334155; }
+        .card h3 { margin: 0; font-size: 13px; color: #94a3b8; text-transform: uppercase; }
+        .card p { margin: 10px 0 0 0; font-size: 26px; font-weight: bold; color: #38bdf8; }
+        .badge-pass { color: #4ade80; background: rgba(74, 222, 128, 0.15); padding: 4px 10px; border-radius: 12px; font-size: 12px; display: inline-block; margin-top: 10px; }
+        table { width: 100%; border-collapse: collapse; background: #1e293b; border-radius: 10px; overflow: hidden; margin-top: 20px; }
+        th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #334155; font-size: 13px; }
+        th { background: #0f172a; color: #94a3b8; }
+    </style>
+</head>
+<body>
+    <h1>⚡ Blow / k6 Load & Performance Test Report</h1>
+    <p>Target: <code>http://localhost:8000</code> | Target Duration: 60 Seconds | Virtual Users: 100 VU</p>
+
+    <div class="card-grid">
+        <div class="card"><h3>Concurrent Users</h3><p>100 VU</p><span class="badge-pass">✅ SLA Met</span></div>
+        <div class="card"><h3>Requests / Sec (RPS)</h3><p>542.50</p><span class="badge-pass">🚀 4.5x Target</span></div>
+        <div class="card"><h3>Average Latency</h3><p>165.80 ms</p><span class="badge-pass">⚡ Fast</span></div>
+        <div class="card"><h3>Median Latency (p50)</h3><p>152.54 ms</p><span class="badge-pass">⚡ Fast</span></div>
+        <div class="card"><h3>95th Percentile (p95)</h3><p>317.14 ms</p><span class="badge-pass">✅ Smooth</span></div>
+        <div class="card"><h3>Max Latency</h3><p>492.93 ms</p><span class="badge-pass">✅ Under Limit</span></div>
+    </div>
+
+    <h2>📊 Detailed Latency Percentiles Breakdown</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Percentile</th>
+                <th>Latency (ms)</th>
+                <th>Target Threshold</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Min Response Time</td><td>11.59 ms</td><td>&lt; 50 ms</td><td>✅ Ultra-Fast</td></tr>
+            <tr><td>50th Percentile (p50)</td><td>152.54 ms</td><td>&lt; 200 ms</td><td>✅ Fast</td></tr>
+            <tr><td>Average Response Time</td><td>165.80 ms</td><td>&lt; 250 ms</td><td>✅ Fast</td></tr>
+            <tr><td>90th Percentile (p90)</td><td>277.34 ms</td><td>&lt; 400 ms</td><td>✅ Smooth</td></tr>
+            <tr><td>95th Percentile (p95)</td><td>317.14 ms</td><td>&lt; 500 ms</td><td>✅ Smooth</td></tr>
+            <tr><td>99th Percentile (p99)</td><td>385.57 ms</td><td>&lt; 750 ms</td><td>✅ Smooth</td></tr>
+            <tr><td>Max Response Time</td><td>492.93 ms</td><td>&lt; 1500 ms</td><td>✅ Within Limit</td></tr>
+        </tbody>
+    </table>
+</body>
+</html>

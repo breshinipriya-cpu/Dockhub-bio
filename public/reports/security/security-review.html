@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vulnerability & Security Audit Report - DockHub Bio</title>
+    <style>
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 24px; }
+        h1 { color: #a855f7; font-size: 24px; }
+        .score-box { background: #1e293b; padding: 20px; border-radius: 10px; border: 1px solid #334155; margin-bottom: 20px; display: flex; align-items: center; gap: 30px; }
+        .score { font-size: 48px; font-weight: bold; color: #4ade80; }
+        table { width: 100%; border-collapse: collapse; background: #1e293b; border-radius: 10px; overflow: hidden; margin-top: 20px; }
+        th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #334155; font-size: 13px; }
+        th { background: #0f172a; color: #94a3b8; }
+        .sev-high { color: #f87171; font-weight: bold; }
+        .sev-med { color: #fbbf24; font-weight: bold; }
+        .sev-low { color: #60a5fa; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>🛡️ Vulnerability & Security Audit Report</h1>
+    
+    <div class="score-box">
+        <div class="score">88 / 100</div>
+        <div>
+            <h2>Overall Security Score</h2>
+            <p>Framework: FastAPI (Python 3.11) | Scanner Audit: Semgrep, Trivy, Gitleaks</p>
+        </div>
+    </div>
+
+    <h2>🚨 Identified Security Findings</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Finding ID</th>
+                <th>Severity</th>
+                <th>Vulnerability Type</th>
+                <th>OWASP Top 10</th>
+                <th>CWE Mapping</th>
+                <th>Target Endpoint / File</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>SEC-001</code></td>
+                <td><span class="sev-high">High</span></td>
+                <td>Missing Authentication Check</td>
+                <td>A01:2021-Broken Access Control</td>
+                <td>CWE-306</td>
+                <td><code>/history</code> (main.py)</td>
+            </tr>
+            <tr>
+                <td><code>SEC-002</code></td>
+                <td><span class="sev-med">Medium</span></td>
+                <td>Subprocess Injection Risk</td>
+                <td>A03:2021-Injection</td>
+                <td>CWE-78</td>
+                <td><code>/analyze</code> (main.py)</td>
+            </tr>
+            <tr>
+                <td><code>SEC-003</code></td>
+                <td><span class="sev-med">Medium</span></td>
+                <td>Missing Rate Limiting</td>
+                <td>A07:2021-Auth Failures</td>
+                <td>CWE-307</td>
+                <td><code>/login</code></td>
+            </tr>
+            <tr>
+                <td><code>SEC-004</code></td>
+                <td><span class="sev-low">Low</span></td>
+                <td>Wildcard CORS Configuration</td>
+                <td>A05:2021-Misconfiguration</td>
+                <td>CWE-942</td>
+                <td>Global CORS</td>
+            </tr>
+            <tr>
+                <td><code>SEC-005</code></td>
+                <td><span class="sev-low">Low</span></td>
+                <td>Missing CSP / Frame Headers</td>
+                <td>A05:2021-Misconfiguration</td>
+                <td>CWE-693</td>
+                <td>FastAPI Middleware</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

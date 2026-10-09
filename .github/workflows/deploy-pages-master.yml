@@ -1,0 +1,42 @@
+name: Deploy Master QA & Security Portal to GitHub Pages
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy-portal:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies & Build Master Portal
+        run: |
+          python -m pip install --upgrade pip
+          pip install openpyxl requests
+          python build_master_portal.py
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'public'
+
+      - name: Deploy Master Portal to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
