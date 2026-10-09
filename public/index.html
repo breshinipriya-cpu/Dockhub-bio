@@ -84,20 +84,42 @@
         .stat-badge.purple { background: rgba(192, 132, 252, 0.1); color: var(--accent-purple); }
         .stat-badge.amber { background: rgba(245, 158, 11, 0.1); color: var(--accent-amber); }
 
+        .action-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
         .btn-view {
             background: var(--accent-blue);
             color: #000;
             text-decoration: none;
-            padding: 12px 20px;
+            padding: 10px 16px;
             border-radius: 8px;
             font-weight: bold;
             text-align: center;
-            font-size: 14px;
+            font-size: 13px;
             display: block;
         }
         .btn-view.green { background: var(--accent-green); }
         .btn-view.purple { background: var(--accent-purple); }
         .btn-view.amber { background: var(--accent-amber); }
+
+        .btn-download {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 13px;
+            border: 1px solid var(--border-color);
+            display: block;
+            transition: background 0.2s;
+        }
+        .btn-download:hover {
+            background: rgba(255, 255, 255, 0.18);
+        }
         footer {
             text-align: center;
             margin-top: 50px;
@@ -109,8 +131,8 @@
 <body>
 
     <header>
-        <h1> DockHub Bio — Master QA & Security Audit Portal</h1>
-        <p>Unified Testing Dashboard for Web, Mobile, Load Performance & Vulnerability Security Audits</p>
+        <h1>🌐 DockHub Bio — Master QA & Security Audit Portal</h1>
+        <p>Unified Testing Dashboard with 1-Click Excel Sheet Downloads for All 4 QA Categories</p>
     </header>
 
     <div class="portal-grid">
@@ -123,7 +145,10 @@
                 <div class="stat-badge green">✅ 430 Passed (100% Pass Rate)</div>
                 <p style="font-size:13px; color:var(--text-muted);">Covers Auth, SPA Navigation, UI assertions, CRUD, forms, and input sanitization.</p>
             </div>
-            <a href="reports/selenium/execution-report.html" class="btn-view green">View Selenium Web Report ➔</a>
+            <div class="action-group">
+                <a href="reports/selenium/execution-report.html" class="btn-view green">View Web Report ➔</a>
+                <a href="excel_downloads/Selenium_Test_Report.xlsx" class="btn-download" download>📥 Download Excel Sheet (.xlsx)</a>
+            </div>
         </div>
 
         <!-- 2. APPIUM MOBILE E2E -->
@@ -134,7 +159,10 @@
                 <div class="stat-badge green">✅ 480 Passed (100% Pass Rate)</div>
                 <p style="font-size:13px; color:var(--text-muted);">Covers Android UI, mobile login, navigation drawer, protein search, and offline mode.</p>
             </div>
-            <a href="reports/appium/execution-report.html" class="btn-view">View Appium Mobile Report ➔</a>
+            <div class="action-group">
+                <a href="reports/appium/execution-report.html" class="btn-view">View Mobile Report ➔</a>
+                <a href="excel_downloads/Appium_Test_Report.xlsx" class="btn-download" download>📥 Download Excel Sheet (.xlsx)</a>
+            </div>
         </div>
 
         <!-- 3. BLOW / K6 LOAD TEST -->
@@ -145,7 +173,10 @@
                 <div class="stat-badge amber">🚀 542.50 RPS \| 165.8ms Latency</div>
                 <p style="font-size:13px; color:var(--text-muted);">Evaluates system throughput, response latency, stress boundaries, and spike recovery.</p>
             </div>
-            <a href="reports/load/performance-report.html" class="btn-view amber">View Blow Load Report ➔</a>
+            <div class="action-group">
+                <a href="reports/load/performance-report.html" class="btn-view amber">View Blow Load Report ➔</a>
+                <a href="excel_downloads/Blow_Load_Test_Report.xlsx" class="btn-download" download>📥 Download Excel Sheet (.xlsx)</a>
+            </div>
         </div>
 
         <!-- 4. VULNERABILITY SECURITY AUDIT -->
@@ -156,7 +187,10 @@
                 <div class="stat-badge purple">🛡️ Score 88/100 (0 Critical)</div>
                 <p style="font-size:13px; color:var(--text-muted);">OWASP Top 10 & CWE mapped audit covering dependency advisories, secrets, and auth checks.</p>
             </div>
-            <a href="reports/security/security-review.html" class="btn-view purple">View Vulnerability Report ➔</a>
+            <div class="action-group">
+                <a href="reports/security/security-review.html" class="btn-view purple">View Vulnerability Report ➔</a>
+                <a href="excel_downloads/Vulnerability_Security_Report.xlsx" class="btn-download" download>📥 Download Excel Sheet (.xlsx)</a>
+            </div>
         </div>
 
     </div>

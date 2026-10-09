@@ -50,6 +50,12 @@ jobs:
           format: 'table'
           exit-code: '0'
 
+      - name: Install Python Dependencies & Generate Excel Report
+        run: |
+          python -m pip install --upgrade pip
+          pip install openpyxl
+          python generate_all_4_excel_reports.py
+
       - name: Upload Security Audit Artifacts
         if: always()
         uses: actions/upload-artifact@v4
@@ -57,6 +63,7 @@ jobs:
           name: Passive-Security-QA-Reports
           path: |
             Vulnerability Test Results/
+            excel_reports/Vulnerability_Security_Report.xlsx
           retention-days: 30
 
       - name: Publish Security Audit Step Summary

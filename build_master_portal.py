@@ -6,30 +6,36 @@ base_dir = r"c:\Users\user.LAPTOP\OneDrive\Desktop\security monitoring"
 public_dir = os.path.join(base_dir, "public")
 os.makedirs(public_dir, exist_ok=True)
 
-# 1. Ensure report subdirectories
+# 1. Ensure report subdirectories & excel downloads folder
 selenium_dir = os.path.join(public_dir, "reports", "selenium")
 appium_dir = os.path.join(public_dir, "reports", "appium")
 load_dir = os.path.join(public_dir, "reports", "load")
 security_dir = os.path.join(public_dir, "reports", "security")
-artifacts_dir = os.path.join(public_dir, "artifacts")
+excel_downloads_dir = os.path.join(public_dir, "excel_downloads")
 
-for d in [selenium_dir, appium_dir, load_dir, security_dir, artifacts_dir]:
+for d in [selenium_dir, appium_dir, load_dir, security_dir, excel_downloads_dir]:
     os.makedirs(d, exist_ok=True)
 
-# 2. Copy Web Selenium Reports if present
+# 2. Copy the 4 dedicated Excel reports into public/excel_downloads/
+excel_src_dir = os.path.join(base_dir, "excel_reports")
+for fname in ["Selenium_Test_Report.xlsx", "Appium_Test_Report.xlsx", "Blow_Load_Test_Report.xlsx", "Vulnerability_Security_Report.xlsx"]:
+    src_file = os.path.join(excel_src_dir, fname)
+    if os.path.exists(src_file):
+        shutil.copy(src_file, os.path.join(excel_downloads_dir, fname))
+
+# 3. Copy Web Selenium HTML Reports if present
 selenium_src = os.path.join(base_dir, "automation", "reports")
 if os.path.exists(os.path.join(selenium_src, "HTML", "execution-report.html")):
     shutil.copy(os.path.join(selenium_src, "HTML", "execution-report.html"), os.path.join(selenium_dir, "execution-report.html"))
     shutil.copy(os.path.join(selenium_src, "HTML", "dashboard.html"), os.path.join(selenium_dir, "dashboard.html"))
 
-# 3. Copy Appium Mobile Reports if present
+# 4. Copy Appium Mobile HTML Reports if present
 appium_src = os.path.join(base_dir, "Test Results")
 if os.path.exists(os.path.join(appium_src, "HTML", "execution-report.html")):
     shutil.copy(os.path.join(appium_src, "HTML", "execution-report.html"), os.path.join(appium_dir, "execution-report.html"))
     shutil.copy(os.path.join(appium_src, "HTML", "dashboard.html"), os.path.join(appium_dir, "dashboard.html"))
-    shutil.copy(os.path.join(appium_src, "HTML", "trends.html"), os.path.join(appium_dir, "trends.html"))
 
-# 4. Generate HTML version for Blow / k6 Load Test Report
+# 5. Generate HTML version for Blow / k6 Load Test Report with Excel Download Button
 load_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,11 +43,13 @@ load_html = f"""<!DOCTYPE html>
     <title>Blow / k6 Load & Performance Report - DockHub Bio</title>
     <style>
         body {{ font-family: 'Segoe UI', system-ui, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 24px; }}
-        h1 {{ color: #38bdf8; font-size: 24px; }}
+        h1 {{ color: #f59e0b; font-size: 24px; }}
+        .action-bar {{ display: flex; justify-content: space-between; align-items: center; background: #1e293b; padding: 16px 24px; border-radius: 10px; border: 1px solid #334155; margin-bottom: 24px; }}
+        .btn-excel {{ background: #10b981; color: #000; text-decoration: none; padding: 10px 18px; border-radius: 8px; font-weight: bold; font-size: 14px; display: inline-block; }}
         .card-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 20px 0; }}
         .card {{ background: #1e293b; padding: 20px; border-radius: 10px; border: 1px solid #334155; }}
         .card h3 {{ margin: 0; font-size: 13px; color: #94a3b8; text-transform: uppercase; }}
-        .card p {{ margin: 10px 0 0 0; font-size: 26px; font-weight: bold; color: #38bdf8; }}
+        .card p {{ margin: 10px 0 0 0; font-size: 26px; font-weight: bold; color: #f59e0b; }}
         .badge-pass {{ color: #4ade80; background: rgba(74, 222, 128, 0.15); padding: 4px 10px; border-radius: 12px; font-size: 12px; display: inline-block; margin-top: 10px; }}
         table {{ width: 100%; border-collapse: collapse; background: #1e293b; border-radius: 10px; overflow: hidden; margin-top: 20px; }}
         th, td {{ padding: 12px 16px; text-align: left; border-bottom: 1px solid #334155; font-size: 13px; }}
@@ -49,8 +57,13 @@ load_html = f"""<!DOCTYPE html>
     </style>
 </head>
 <body>
-    <h1>⚡ Blow / k6 Load & Performance Test Report</h1>
-    <p>Target: <code>http://localhost:8000</code> | Target Duration: 60 Seconds | Virtual Users: 100 VU</p>
+    <div class="action-bar">
+        <div>
+            <h1 style="margin:0;">⚡ Blow / k6 Load & Performance Report</h1>
+            <p style="margin:4px 0 0 0; color:#94a3b8;">100 Virtual Users Baseline Load Test & Capacity Audit</p>
+        </div>
+        <a href="../../excel_downloads/Blow_Load_Test_Report.xlsx" class="btn-excel" download>📥 Download Blow Load Excel Report (.xlsx)</a>
+    </div>
 
     <div class="card-grid">
         <div class="card"><h3>Concurrent Users</h3><p>100 VU</p><span class="badge-pass">✅ SLA Met</span></div>
@@ -87,7 +100,7 @@ load_html = f"""<!DOCTYPE html>
 with open(os.path.join(load_dir, "performance-report.html"), "w", encoding="utf-8") as f:
     f.write(load_html)
 
-# 5. Generate HTML version for Vulnerability & Security Audit Report
+# 6. Generate HTML version for Vulnerability & Security Audit Report with Excel Download Button
 security_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,7 +108,9 @@ security_html = f"""<!DOCTYPE html>
     <title>Vulnerability & Security Audit Report - DockHub Bio</title>
     <style>
         body {{ font-family: 'Segoe UI', system-ui, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 24px; }}
-        h1 {{ color: #a855f7; font-size: 24px; }}
+        h1 {{ color: #c084fc; font-size: 24px; margin: 0; }}
+        .action-bar {{ display: flex; justify-content: space-between; align-items: center; background: #1e293b; padding: 16px 24px; border-radius: 10px; border: 1px solid #334155; margin-bottom: 24px; }}
+        .btn-excel {{ background: #10b981; color: #000; text-decoration: none; padding: 10px 18px; border-radius: 8px; font-weight: bold; font-size: 14px; display: inline-block; }}
         .score-box {{ background: #1e293b; padding: 20px; border-radius: 10px; border: 1px solid #334155; margin-bottom: 20px; display: flex; align-items: center; gap: 30px; }}
         .score {{ font-size: 48px; font-weight: bold; color: #4ade80; }}
         table {{ width: 100%; border-collapse: collapse; background: #1e293b; border-radius: 10px; overflow: hidden; margin-top: 20px; }}
@@ -107,13 +122,19 @@ security_html = f"""<!DOCTYPE html>
     </style>
 </head>
 <body>
-    <h1>🛡️ Vulnerability & Security Audit Report</h1>
-    
+    <div class="action-bar">
+        <div>
+            <h1>🛡️ Vulnerability & Security Audit Report</h1>
+            <p style="margin:4px 0 0 0; color:#94a3b8;">DevSecOps SAST/DAST Audit & OWASP/CWE Risk Scorecard</p>
+        </div>
+        <a href="../../excel_downloads/Vulnerability_Security_Report.xlsx" class="btn-excel" download>📥 Download Vulnerability Excel Report (.xlsx)</a>
+    </div>
+
     <div class="score-box">
         <div class="score">88 / 100</div>
         <div>
-            <h2>Overall Security Score</h2>
-            <p>Framework: FastAPI (Python 3.11) | Scanner Audit: Semgrep, Trivy, Gitleaks</p>
+            <h2 style="margin:0;">Overall Security Score</h2>
+            <p style="margin:5px 0 0 0; color:#94a3b8;">Framework: FastAPI (Python 3.11) | Scanners: Semgrep, Trivy, Gitleaks</p>
         </div>
     </div>
 
@@ -178,7 +199,7 @@ security_html = f"""<!DOCTYPE html>
 with open(os.path.join(security_dir, "security-review.html"), "w", encoding="utf-8") as f:
     f.write(security_html)
 
-# 6. Master Portal index.html (View All 4 Categories)
+# 7. Master Portal index.html with Excel Download Buttons on ALL 4 Cards
 master_index_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -265,20 +286,42 @@ master_index_html = f"""<!DOCTYPE html>
         .stat-badge.purple {{ background: rgba(192, 132, 252, 0.1); color: var(--accent-purple); }}
         .stat-badge.amber {{ background: rgba(245, 158, 11, 0.1); color: var(--accent-amber); }}
 
+        .action-group {{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }}
         .btn-view {{
             background: var(--accent-blue);
             color: #000;
             text-decoration: none;
-            padding: 12px 20px;
+            padding: 10px 16px;
             border-radius: 8px;
             font-weight: bold;
             text-align: center;
-            font-size: 14px;
+            font-size: 13px;
             display: block;
         }}
         .btn-view.green {{ background: var(--accent-green); }}
         .btn-view.purple {{ background: var(--accent-purple); }}
         .btn-view.amber {{ background: var(--accent-amber); }}
+
+        .btn-download {{
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 13px;
+            border: 1px solid var(--border-color);
+            display: block;
+            transition: background 0.2s;
+        }}
+        .btn-download:hover {{
+            background: rgba(255, 255, 255, 0.18);
+        }}
         footer {{
             text-align: center;
             margin-top: 50px;
@@ -290,8 +333,8 @@ master_index_html = f"""<!DOCTYPE html>
 <body>
 
     <header>
-        <h1> DockHub Bio — Master QA & Security Audit Portal</h1>
-        <p>Unified Testing Dashboard for Web, Mobile, Load Performance & Vulnerability Security Audits</p>
+        <h1>🌐 DockHub Bio — Master QA & Security Audit Portal</h1>
+        <p>Unified Testing Dashboard with 1-Click Excel Sheet Downloads for All 4 QA Categories</p>
     </header>
 
     <div class="portal-grid">
@@ -304,7 +347,10 @@ master_index_html = f"""<!DOCTYPE html>
                 <div class="stat-badge green">✅ 430 Passed (100% Pass Rate)</div>
                 <p style="font-size:13px; color:var(--text-muted);">Covers Auth, SPA Navigation, UI assertions, CRUD, forms, and input sanitization.</p>
             </div>
-            <a href="reports/selenium/execution-report.html" class="btn-view green">View Selenium Web Report ➔</a>
+            <div class="action-group">
+                <a href="reports/selenium/execution-report.html" class="btn-view green">View Web Report ➔</a>
+                <a href="excel_downloads/Selenium_Test_Report.xlsx" class="btn-download" download>📥 Download Excel Sheet (.xlsx)</a>
+            </div>
         </div>
 
         <!-- 2. APPIUM MOBILE E2E -->
@@ -315,7 +361,10 @@ master_index_html = f"""<!DOCTYPE html>
                 <div class="stat-badge green">✅ 480 Passed (100% Pass Rate)</div>
                 <p style="font-size:13px; color:var(--text-muted);">Covers Android UI, mobile login, navigation drawer, protein search, and offline mode.</p>
             </div>
-            <a href="reports/appium/execution-report.html" class="btn-view">View Appium Mobile Report ➔</a>
+            <div class="action-group">
+                <a href="reports/appium/execution-report.html" class="btn-view">View Mobile Report ➔</a>
+                <a href="excel_downloads/Appium_Test_Report.xlsx" class="btn-download" download>📥 Download Excel Sheet (.xlsx)</a>
+            </div>
         </div>
 
         <!-- 3. BLOW / K6 LOAD TEST -->
@@ -326,7 +375,10 @@ master_index_html = f"""<!DOCTYPE html>
                 <div class="stat-badge amber">🚀 542.50 RPS \| 165.8ms Latency</div>
                 <p style="font-size:13px; color:var(--text-muted);">Evaluates system throughput, response latency, stress boundaries, and spike recovery.</p>
             </div>
-            <a href="reports/load/performance-report.html" class="btn-view amber">View Blow Load Report ➔</a>
+            <div class="action-group">
+                <a href="reports/load/performance-report.html" class="btn-view amber">View Blow Load Report ➔</a>
+                <a href="excel_downloads/Blow_Load_Test_Report.xlsx" class="btn-download" download>📥 Download Excel Sheet (.xlsx)</a>
+            </div>
         </div>
 
         <!-- 4. VULNERABILITY SECURITY AUDIT -->
@@ -337,7 +389,10 @@ master_index_html = f"""<!DOCTYPE html>
                 <div class="stat-badge purple">🛡️ Score 88/100 (0 Critical)</div>
                 <p style="font-size:13px; color:var(--text-muted);">OWASP Top 10 & CWE mapped audit covering dependency advisories, secrets, and auth checks.</p>
             </div>
-            <a href="reports/security/security-review.html" class="btn-view purple">View Vulnerability Report ➔</a>
+            <div class="action-group">
+                <a href="reports/security/security-review.html" class="btn-view purple">View Vulnerability Report ➔</a>
+                <a href="excel_downloads/Vulnerability_Security_Report.xlsx" class="btn-download" download>📥 Download Excel Sheet (.xlsx)</a>
+            </div>
         </div>
 
     </div>
@@ -352,4 +407,4 @@ master_index_html = f"""<!DOCTYPE html>
 with open(os.path.join(public_dir, "index.html"), "w", encoding="utf-8") as f:
     f.write(master_index_html)
 
-print("Master QA Portal successfully built in public/ directory.")
+print("Master QA Portal successfully updated with Excel download links.")

@@ -5,7 +5,9 @@
     <title>Vulnerability & Security Audit Report - DockHub Bio</title>
     <style>
         body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 24px; }
-        h1 { color: #a855f7; font-size: 24px; }
+        h1 { color: #c084fc; font-size: 24px; margin: 0; }
+        .action-bar { display: flex; justify-content: space-between; align-items: center; background: #1e293b; padding: 16px 24px; border-radius: 10px; border: 1px solid #334155; margin-bottom: 24px; }
+        .btn-excel { background: #10b981; color: #000; text-decoration: none; padding: 10px 18px; border-radius: 8px; font-weight: bold; font-size: 14px; display: inline-block; }
         .score-box { background: #1e293b; padding: 20px; border-radius: 10px; border: 1px solid #334155; margin-bottom: 20px; display: flex; align-items: center; gap: 30px; }
         .score { font-size: 48px; font-weight: bold; color: #4ade80; }
         table { width: 100%; border-collapse: collapse; background: #1e293b; border-radius: 10px; overflow: hidden; margin-top: 20px; }
@@ -17,13 +19,19 @@
     </style>
 </head>
 <body>
-    <h1>🛡️ Vulnerability & Security Audit Report</h1>
-    
+    <div class="action-bar">
+        <div>
+            <h1>🛡️ Vulnerability & Security Audit Report</h1>
+            <p style="margin:4px 0 0 0; color:#94a3b8;">DevSecOps SAST/DAST Audit & OWASP/CWE Risk Scorecard</p>
+        </div>
+        <a href="../../excel_downloads/Vulnerability_Security_Report.xlsx" class="btn-excel" download>📥 Download Vulnerability Excel Report (.xlsx)</a>
+    </div>
+
     <div class="score-box">
         <div class="score">88 / 100</div>
         <div>
-            <h2>Overall Security Score</h2>
-            <p>Framework: FastAPI (Python 3.11) | Scanner Audit: Semgrep, Trivy, Gitleaks</p>
+            <h2 style="margin:0;">Overall Security Score</h2>
+            <p style="margin:5px 0 0 0; color:#94a3b8;">Framework: FastAPI (Python 3.11) | Scanners: Semgrep, Trivy, Gitleaks</p>
         </div>
     </div>
 
