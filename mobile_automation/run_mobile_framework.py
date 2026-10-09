@@ -50,7 +50,7 @@ def main():
         logger.error(f"Mobile Pipeline FAILED: Pass rate ({pass_rate:.2f}%) below required threshold of 95.0%.")
         sys.exit(1)
 
-    logger.info("✅ SUCCESS: Mobile Appium Automation execution completed cleanly!")
+    logger.info("[SUCCESS] Mobile Appium Automation execution completed cleanly!")
     sys.exit(0)
 
 if __name__ == "__main__":
