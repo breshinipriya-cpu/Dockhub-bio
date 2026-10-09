@@ -1,0 +1,57 @@
+name: Deploy Mobile Automation Reports to GitHub Pages
+
+on:
+  workflow_run:
+    workflows: ["Android Appium Mobile E2E Automation & GitHub Pages Reporting"]
+    types:
+      - completed
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  deploy-pages-reports:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Download Execution Reports Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: Android-Appium-Test-Reports
+          path: Test Results/
+        continue-on-error: true
+
+      - name: Assemble GitHub Pages Directory Structure
+        run: |
+          mkdir -p _site/reports/latest
+          mkdir -p _site/reports/history/build-${{ github.run_number }}
+
+          if [ -d "Test Results/HTML" ]; then
+            cp -r "Test Results/HTML/"* _site/reports/latest/
+            cp -r "Test Results/HTML/"* _site/reports/history/build-${{ github.run_number }}/
+          fi
+
+          cat << 'EOF' > _site/index.html
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta http-equiv="refresh" content="0; url=reports/latest/execution-report.html" />
+          </head>
+          <body>
+            <p>Redirecting to <a href="reports/latest/execution-report.html">latest execution report</a>...</p>
+          </body>
+          </html>
+          EOF
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_site'
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4

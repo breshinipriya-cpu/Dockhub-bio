@@ -1,0 +1,5115 @@
+{
+  "total": 510,
+  "passed": 510,
+  "failed": 0,
+  "skipped": 0,
+  "pass_rate": 100.0,
+  "device_info": {
+    "platform": "Android",
+    "version": "13.0",
+    "device": "Android_Emulator",
+    "automation_engine": "UiAutomator2"
+  },
+  "results": [
+    {
+      "test_id": "TC_AUTH_001",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #1",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.011099999937869143,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_002",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #2",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.012000000424450263,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_003",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #3",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.009500000487605575,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_004",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #4",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.009299999874201603,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_005",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #5",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.009399999726156238,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_006",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #6",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.008600000001024455,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_007",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #7",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.00869999985297909,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_008",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #8",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.014299999747890979,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_009",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #9",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.009900000804918818,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_010",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #10",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.008900000466383062,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_011",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #11",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.008800000614428427,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_012",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #12",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.006199999916134402,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_013",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #13",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.005699999746866524,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_014",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #14",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.007799999366397969,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_015",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #15",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.006799999937356915,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_016",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #16",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.00940000063565094,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_017",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #17",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.009299999874201603,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_018",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #18",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.009200000022246968,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_019",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #19",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.009999999747378752,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_020",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #20",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.009800000043469481,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_021",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #21",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.00850000014906982,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_022",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #22",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.00889999955688836,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_023",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #23",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.00830000044516055,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_024",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #24",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.005200000487093348,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_025",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #25",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0073999999585794285,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_026",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #26",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.007300000106624793,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_027",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #27",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.007999999979801942,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_028",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #28",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.008400000297115184,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_029",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #29",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.007799999366397969,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_030",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #30",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.007899999218352605,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_031",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #31",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.00850000014906982,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_032",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #32",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0073999999585794285,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_033",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #33",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.008199999683711212,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_034",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #34",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.009100000170292333,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_035",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #35",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.007900000127847306,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_036",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #36",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.012999999853491317,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_037",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #37",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.010599999768601265,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_038",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #38",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.009000000318337698,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_039",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #39",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0804999999672873,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AUTH_040",
+      "module": "Authentication",
+      "name": "Verify Mobile Authentication Flow #40",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0106999996205559,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_001",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #1",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.011099999937869143,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_002",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #2",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.010199999451288022,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_003",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #3",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.011500000255182385,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_004",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #4",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.009800000043469481,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_005",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #5",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.008099999831756577,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_006",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #6",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.011299999641778413,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_007",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #7",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.009299999874201603,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_008",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #8",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.008600000001024455,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_009",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #9",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.009300000783696305,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_010",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #10",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.009399999726156238,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_011",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #11",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.009300000783696305,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_012",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #12",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.00889999955688836,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_013",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #13",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.009599999430065509,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_014",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #14",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.009700000191514846,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_015",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #15",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.008400000297115184,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_016",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #16",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.010099999599333387,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_017",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #17",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.009000000318337698,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_018",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #18",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.009399999726156238,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_019",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #19",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.00830000044516055,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_020",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #20",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.008799999704933725,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_021",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #21",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.010200000360782724,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_022",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #22",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.008600000001024455,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_023",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #23",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.012800000149582047,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_024",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #24",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.00850000014906982,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_025",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #25",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.009899999895424116,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_026",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #26",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.008600000001024455,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_027",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #27",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.008900000466383062,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_028",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #28",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.006299999768089037,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_029",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #29",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.007900000127847306,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_AZ_030",
+      "module": "Authorization",
+      "name": "Verify Mobile Authorization Flow #30",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.006699999175907578,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REG_001",
+      "module": "Registration",
+      "name": "Verify Mobile Registration Flow #1",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.007700000423938036,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REG_002",
+      "module": "Registration",
+      "name": "Verify Mobile Registration Flow #2",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.006699999175907578,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REG_003",
+      "module": "Registration",
+      "name": "Verify Mobile Registration Flow #3",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0057999995988211595,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REG_004",
+      "module": "Registration",
+      "name": "Verify Mobile Registration Flow #4",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.006199999916134402,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REG_005",
+      "module": "Registration",
+      "name": "Verify Mobile Registration Flow #5",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.006499999471998308,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REG_006",
+      "module": "Registration",
+      "name": "Verify Mobile Registration Flow #6",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.006299999768089037,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REG_007",
+      "module": "Registration",
+      "name": "Verify Mobile Registration Flow #7",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.005099999725644011,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REG_008",
+      "module": "Registration",
+      "name": "Verify Mobile Registration Flow #8",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.005599999894911889,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REG_009",
+      "module": "Registration",
+      "name": "Verify Mobile Registration Flow #9",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.005899999450775795,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REG_010",
+      "module": "Registration",
+      "name": "Verify Mobile Registration Flow #10",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.006999999641266186,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REG_011",
+      "module": "Registration",
+      "name": "Verify Mobile Registration Flow #11",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.006200000825629104,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REG_012",
+      "module": "Registration",
+      "name": "Verify Mobile Registration Flow #12",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.005500000042957254,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REG_013",
+      "module": "Registration",
+      "name": "Verify Mobile Registration Flow #13",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.005699999746866524,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REG_014",
+      "module": "Registration",
+      "name": "Verify Mobile Registration Flow #14",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0057999995988211595,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REG_015",
+      "module": "Registration",
+      "name": "Verify Mobile Registration Flow #15",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.006000000212225132,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REG_016",
+      "module": "Registration",
+      "name": "Verify Mobile Registration Flow #16",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.006799999937356915,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REG_017",
+      "module": "Registration",
+      "name": "Verify Mobile Registration Flow #17",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.007800000275892671,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REG_018",
+      "module": "Registration",
+      "name": "Verify Mobile Registration Flow #18",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.00670000008540228,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REG_019",
+      "module": "Registration",
+      "name": "Verify Mobile Registration Flow #19",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.006399999620043673,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REG_020",
+      "module": "Registration",
+      "name": "Verify Mobile Registration Flow #20",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.006199999916134402,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PROF_001",
+      "module": "Profile Management",
+      "name": "Verify Mobile Profile Management Flow #1",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.005700000656361226,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PROF_002",
+      "module": "Profile Management",
+      "name": "Verify Mobile Profile Management Flow #2",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.005800000508315861,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PROF_003",
+      "module": "Profile Management",
+      "name": "Verify Mobile Profile Management Flow #3",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.00670000008540228,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PROF_004",
+      "module": "Profile Management",
+      "name": "Verify Mobile Profile Management Flow #4",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0059000003602704965,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PROF_005",
+      "module": "Profile Management",
+      "name": "Verify Mobile Profile Management Flow #5",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.005699999746866524,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PROF_006",
+      "module": "Profile Management",
+      "name": "Verify Mobile Profile Management Flow #6",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.005699999746866524,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PROF_007",
+      "module": "Profile Management",
+      "name": "Verify Mobile Profile Management Flow #7",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.008700000762473792,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PROF_008",
+      "module": "Profile Management",
+      "name": "Verify Mobile Profile Management Flow #8",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.007100000402715523,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PROF_009",
+      "module": "Profile Management",
+      "name": "Verify Mobile Profile Management Flow #9",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.005700000656361226,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PROF_010",
+      "module": "Profile Management",
+      "name": "Verify Mobile Profile Management Flow #10",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.007699999514443334,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PROF_011",
+      "module": "Profile Management",
+      "name": "Verify Mobile Profile Management Flow #11",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0052999994295532815,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PROF_012",
+      "module": "Profile Management",
+      "name": "Verify Mobile Profile Management Flow #12",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.006100000064179767,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PROF_013",
+      "module": "Profile Management",
+      "name": "Verify Mobile Profile Management Flow #13",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.006400000529538374,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PROF_014",
+      "module": "Profile Management",
+      "name": "Verify Mobile Profile Management Flow #14",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0038999996831989847,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PROF_015",
+      "module": "Profile Management",
+      "name": "Verify Mobile Profile Management Flow #15",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.006399999620043673,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PROF_016",
+      "module": "Profile Management",
+      "name": "Verify Mobile Profile Management Flow #16",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.006000000212225132,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PROF_017",
+      "module": "Profile Management",
+      "name": "Verify Mobile Profile Management Flow #17",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.005699999746866524,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PROF_018",
+      "module": "Profile Management",
+      "name": "Verify Mobile Profile Management Flow #18",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004900000021734741,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PROF_019",
+      "module": "Profile Management",
+      "name": "Verify Mobile Profile Management Flow #19",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004900000021734741,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PROF_020",
+      "module": "Profile Management",
+      "name": "Verify Mobile Profile Management Flow #20",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.007999999979801942,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_001",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #1",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.006600000233447645,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_002",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #2",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0045000006139162,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_003",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #3",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0045000006139162,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_004",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #4",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004999999873689376,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_005",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #5",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004100000296602957,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_006",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #6",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004800000169780105,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_007",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #7",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003099999958067201,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_008",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #8",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0028000004022032954,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_009",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #9",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004499999704421498,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_010",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #10",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003099999958067201,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_011",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #11",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0028000004022032954,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_012",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #12",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0038999996831989847,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_013",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #13",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0037999998312443495,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_014",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #14",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0045000006139162,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_015",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #15",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004399999852466863,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_016",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #16",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0034000004234258085,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_017",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #17",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.00270000055024866,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_018",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #18",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004300000000512227,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_019",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #19",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004400000761961564,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_020",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #20",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004100000296602957,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_021",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #21",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002200000380980782,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_022",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #22",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0038999996831989847,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_023",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #23",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004999999873689376,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_024",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #24",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004200000148557592,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_025",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #25",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.00399999953515362,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_026",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #26",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004900000021734741,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_027",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #27",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004599999556376133,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_028",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #28",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0037999998312443495,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_029",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #29",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004399999852466863,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NAV_030",
+      "module": "Navigation",
+      "name": "Verify Mobile Navigation Flow #30",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.028200000087963417,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_DASH_001",
+      "module": "Dashboard",
+      "name": "Verify Mobile Dashboard Flow #1",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.005200000487093348,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_DASH_002",
+      "module": "Dashboard",
+      "name": "Verify Mobile Dashboard Flow #2",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004900000021734741,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_DASH_003",
+      "module": "Dashboard",
+      "name": "Verify Mobile Dashboard Flow #3",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.006000000212225132,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_DASH_004",
+      "module": "Dashboard",
+      "name": "Verify Mobile Dashboard Flow #4",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004200000148557592,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_DASH_005",
+      "module": "Dashboard",
+      "name": "Verify Mobile Dashboard Flow #5",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004599999556376133,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_DASH_006",
+      "module": "Dashboard",
+      "name": "Verify Mobile Dashboard Flow #6",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004499999704421498,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_DASH_007",
+      "module": "Dashboard",
+      "name": "Verify Mobile Dashboard Flow #7",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004300000000512227,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_DASH_008",
+      "module": "Dashboard",
+      "name": "Verify Mobile Dashboard Flow #8",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.00399999953515362,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_DASH_009",
+      "module": "Dashboard",
+      "name": "Verify Mobile Dashboard Flow #9",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0035000002753804438,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_DASH_010",
+      "module": "Dashboard",
+      "name": "Verify Mobile Dashboard Flow #10",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.007800000275892671,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_DASH_011",
+      "module": "Dashboard",
+      "name": "Verify Mobile Dashboard Flow #11",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.005500000042957254,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_DASH_012",
+      "module": "Dashboard",
+      "name": "Verify Mobile Dashboard Flow #12",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.006299999768089037,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_DASH_013",
+      "module": "Dashboard",
+      "name": "Verify Mobile Dashboard Flow #13",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004400000761961564,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_DASH_014",
+      "module": "Dashboard",
+      "name": "Verify Mobile Dashboard Flow #14",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004200000148557592,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_DASH_015",
+      "module": "Dashboard",
+      "name": "Verify Mobile Dashboard Flow #15",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0037999998312443495,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_DASH_016",
+      "module": "Dashboard",
+      "name": "Verify Mobile Dashboard Flow #16",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0033999995139311068,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_DASH_017",
+      "module": "Dashboard",
+      "name": "Verify Mobile Dashboard Flow #17",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004300000000512227,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_DASH_018",
+      "module": "Dashboard",
+      "name": "Verify Mobile Dashboard Flow #18",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003600000127335079,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_DASH_019",
+      "module": "Dashboard",
+      "name": "Verify Mobile Dashboard Flow #19",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003099999958067201,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_DASH_020",
+      "module": "Dashboard",
+      "name": "Verify Mobile Dashboard Flow #20",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003000000106112566,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_001",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #1",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0035000002753804438,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_002",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #2",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004600000465870835,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_003",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #3",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003499999365885742,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_004",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #4",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003600000127335079,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_005",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #5",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003099999958067201,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_006",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #6",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0029000002541579306,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_007",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #7",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_008",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #8",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0026999996407539584,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_009",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #9",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0029000002541579306,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_010",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #10",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003099999958067201,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_011",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #11",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002599999788799323,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_012",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #12",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002899999344663229,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_013",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #13",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0028000004022032954,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_014",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #14",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.005899999450775795,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_015",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #15",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.005800000508315861,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_016",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #16",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004499999704421498,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_017",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #17",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0039000005926936865,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_018",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #18",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004999999873689376,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_019",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #19",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.005099999725644011,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_020",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #20",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0034000004234258085,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_021",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #21",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004900000021734741,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_022",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #22",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0036999999792897142,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_023",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #23",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0032999996619764715,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_024",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #24",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003499999365885742,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_025",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #25",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0031999998100218363,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_026",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #26",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004200000148557592,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_027",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #27",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003600000127335079,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_028",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #28",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004200000148557592,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_029",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #29",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003600000127335079,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_030",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #30",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0026999996407539584,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_031",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #31",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002599999788799323,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_032",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #32",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002599999788799323,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_033",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #33",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_034",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #34",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_035",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #35",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0026999996407539584,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_036",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #36",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002200000380980782,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_037",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #37",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_038",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #38",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002200000380980782,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_039",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #39",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FORM_040",
+      "module": "Forms",
+      "name": "Verify Mobile Forms Flow #40",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_001",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #1",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002200000380980782,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_002",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #2",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0028000004022032954,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_003",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #3",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.00270000055024866,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_004",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #4",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0025000008463393897,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_005",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #5",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_006",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #6",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002200000380980782,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_007",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #7",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002600000698294025,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_008",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #8",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0027999994927085936,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_009",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #9",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.006499999471998308,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_010",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #10",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004999999873689376,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_011",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #11",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0037999998312443495,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_012",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #12",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_013",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #13",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0021999994714860804,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_014",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #14",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_015",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #15",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0023000002329354174,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_016",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #16",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0023000002329354174,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_017",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #17",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_018",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #18",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_019",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #19",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0026999996407539584,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_020",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #20",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002599999788799323,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_021",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #21",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_022",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #22",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002100000529026147,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_023",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #23",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_024",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #24",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0028000004022032954,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_025",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #25",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_026",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #26",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.00270000055024866,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_027",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #27",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002599999788799323,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_028",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #28",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0023000002329354174,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_029",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #29",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_030",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #30",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0029000002541579306,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_031",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #31",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_032",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #32",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_033",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #33",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0021999994714860804,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_034",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #34",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002099999619531445,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_035",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #35",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002200000380980782,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_036",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #36",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002100000529026147,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_037",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #37",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_038",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #38",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002099999619531445,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_039",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #39",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002200000380980782,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_CRUD_040",
+      "module": "CRUD Operations",
+      "name": "Verify Mobile CRUD Operations Flow #40",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SEARCH_001",
+      "module": "Search",
+      "name": "Verify Mobile Search Flow #1",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SEARCH_002",
+      "module": "Search",
+      "name": "Verify Mobile Search Flow #2",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0022999993234407157,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SEARCH_003",
+      "module": "Search",
+      "name": "Verify Mobile Search Flow #3",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0021999994714860804,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SEARCH_004",
+      "module": "Search",
+      "name": "Verify Mobile Search Flow #4",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SEARCH_005",
+      "module": "Search",
+      "name": "Verify Mobile Search Flow #5",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SEARCH_006",
+      "module": "Search",
+      "name": "Verify Mobile Search Flow #6",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SEARCH_007",
+      "module": "Search",
+      "name": "Verify Mobile Search Flow #7",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SEARCH_008",
+      "module": "Search",
+      "name": "Verify Mobile Search Flow #8",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SEARCH_009",
+      "module": "Search",
+      "name": "Verify Mobile Search Flow #9",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0022999993234407157,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SEARCH_010",
+      "module": "Search",
+      "name": "Verify Mobile Search Flow #10",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002200000380980782,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SEARCH_011",
+      "module": "Search",
+      "name": "Verify Mobile Search Flow #11",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002599999788799323,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SEARCH_012",
+      "module": "Search",
+      "name": "Verify Mobile Search Flow #12",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.00270000055024866,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SEARCH_013",
+      "module": "Search",
+      "name": "Verify Mobile Search Flow #13",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0023000002329354174,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SEARCH_014",
+      "module": "Search",
+      "name": "Verify Mobile Search Flow #14",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0022999993234407157,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SEARCH_015",
+      "module": "Search",
+      "name": "Verify Mobile Search Flow #15",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SEARCH_016",
+      "module": "Search",
+      "name": "Verify Mobile Search Flow #16",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0027999994927085936,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SEARCH_017",
+      "module": "Search",
+      "name": "Verify Mobile Search Flow #17",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SEARCH_018",
+      "module": "Search",
+      "name": "Verify Mobile Search Flow #18",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0023000002329354174,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SEARCH_019",
+      "module": "Search",
+      "name": "Verify Mobile Search Flow #19",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SEARCH_020",
+      "module": "Search",
+      "name": "Verify Mobile Search Flow #20",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0023000002329354174,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FLT_001",
+      "module": "Filters",
+      "name": "Verify Mobile Filters Flow #1",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002399999175395351,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FLT_002",
+      "module": "Filters",
+      "name": "Verify Mobile Filters Flow #2",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FLT_003",
+      "module": "Filters",
+      "name": "Verify Mobile Filters Flow #3",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0033999995139311068,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FLT_004",
+      "module": "Filters",
+      "name": "Verify Mobile Filters Flow #4",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0026999996407539584,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FLT_005",
+      "module": "Filters",
+      "name": "Verify Mobile Filters Flow #5",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FLT_006",
+      "module": "Filters",
+      "name": "Verify Mobile Filters Flow #6",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002599999788799323,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FLT_007",
+      "module": "Filters",
+      "name": "Verify Mobile Filters Flow #7",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003099999958067201,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FLT_008",
+      "module": "Filters",
+      "name": "Verify Mobile Filters Flow #8",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.00199999976757681,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FLT_009",
+      "module": "Filters",
+      "name": "Verify Mobile Filters Flow #9",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0026999996407539584,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FLT_010",
+      "module": "Filters",
+      "name": "Verify Mobile Filters Flow #10",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0018999999156221747,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FLT_011",
+      "module": "Filters",
+      "name": "Verify Mobile Filters Flow #11",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002599999788799323,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FLT_012",
+      "module": "Filters",
+      "name": "Verify Mobile Filters Flow #12",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0026999996407539584,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FLT_013",
+      "module": "Filters",
+      "name": "Verify Mobile Filters Flow #13",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0027999994927085936,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FLT_014",
+      "module": "Filters",
+      "name": "Verify Mobile Filters Flow #14",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.00199999976757681,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FLT_015",
+      "module": "Filters",
+      "name": "Verify Mobile Filters Flow #15",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0022999993234407157,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FLT_016",
+      "module": "Filters",
+      "name": "Verify Mobile Filters Flow #16",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FLT_017",
+      "module": "Filters",
+      "name": "Verify Mobile Filters Flow #17",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002899999344663229,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FLT_018",
+      "module": "Filters",
+      "name": "Verify Mobile Filters Flow #18",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0018000000636675395,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FLT_019",
+      "module": "Filters",
+      "name": "Verify Mobile Filters Flow #19",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0023000002329354174,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_FLT_020",
+      "module": "Filters",
+      "name": "Verify Mobile Filters Flow #20",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_001",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #1",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003099999958067201,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_002",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #2",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_003",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #3",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0015999994502635673,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_004",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #4",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_005",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #5",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0023000002329354174,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_006",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #6",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.00270000055024866,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_007",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #7",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003099999958067201,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_008",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #8",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0018000000636675395,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_009",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #9",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.001600000359758269,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_010",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #10",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0018999999156221747,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_011",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #11",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_012",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #12",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0018999999156221747,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_013",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #13",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002200000380980782,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_014",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #14",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_015",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #15",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.00270000055024866,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_016",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #16",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0027999994927085936,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_017",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #17",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002599999788799323,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_018",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #18",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004600000465870835,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_019",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #19",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003000000106112566,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_020",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #20",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004200000148557592,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_021",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #21",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003099999958067201,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_022",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #22",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003099999958067201,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_023",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #23",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003000000106112566,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_024",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #24",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0029000002541579306,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_025",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #25",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003099999958067201,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_026",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #26",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003000000106112566,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_027",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #27",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003099999958067201,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_028",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #28",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0031999998100218363,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_029",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #29",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003099999958067201,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_030",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #30",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0029000002541579306,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_031",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #31",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0035000002753804438,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_032",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #32",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0027999994927085936,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_033",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #33",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003200000719516538,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_034",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #34",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.006499999471998308,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_035",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #35",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.00399999953515362,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_036",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #36",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.005200000487093348,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_037",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #37",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004400000761961564,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_038",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #38",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004800000169780105,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_039",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #39",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004000000444648322,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_VAL_040",
+      "module": "Input Validation",
+      "name": "Verify Mobile Input Validation Flow #40",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0038000007407390513,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_ERR_001",
+      "module": "Error Handling",
+      "name": "Verify Mobile Error Handling Flow #1",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004200000148557592,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_ERR_002",
+      "module": "Error Handling",
+      "name": "Verify Mobile Error Handling Flow #2",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004300000000512227,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_ERR_003",
+      "module": "Error Handling",
+      "name": "Verify Mobile Error Handling Flow #3",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004200000148557592,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_ERR_004",
+      "module": "Error Handling",
+      "name": "Verify Mobile Error Handling Flow #4",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0035000002753804438,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_ERR_005",
+      "module": "Error Handling",
+      "name": "Verify Mobile Error Handling Flow #5",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003000000106112566,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_ERR_006",
+      "module": "Error Handling",
+      "name": "Verify Mobile Error Handling Flow #6",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_ERR_007",
+      "module": "Error Handling",
+      "name": "Verify Mobile Error Handling Flow #7",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0023000002329354174,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_ERR_008",
+      "module": "Error Handling",
+      "name": "Verify Mobile Error Handling Flow #8",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002200000380980782,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_ERR_009",
+      "module": "Error Handling",
+      "name": "Verify Mobile Error Handling Flow #9",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0022999993234407157,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_ERR_010",
+      "module": "Error Handling",
+      "name": "Verify Mobile Error Handling Flow #10",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002099999619531445,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_ERR_011",
+      "module": "Error Handling",
+      "name": "Verify Mobile Error Handling Flow #11",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003000000106112566,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_ERR_012",
+      "module": "Error Handling",
+      "name": "Verify Mobile Error Handling Flow #12",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0027999994927085936,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_ERR_013",
+      "module": "Error Handling",
+      "name": "Verify Mobile Error Handling Flow #13",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0033999995139311068,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_ERR_014",
+      "module": "Error Handling",
+      "name": "Verify Mobile Error Handling Flow #14",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0028000004022032954,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_ERR_015",
+      "module": "Error Handling",
+      "name": "Verify Mobile Error Handling Flow #15",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002599999788799323,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_ERR_016",
+      "module": "Error Handling",
+      "name": "Verify Mobile Error Handling Flow #16",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002599999788799323,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_ERR_017",
+      "module": "Error Handling",
+      "name": "Verify Mobile Error Handling Flow #17",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002599999788799323,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_ERR_018",
+      "module": "Error Handling",
+      "name": "Verify Mobile Error Handling Flow #18",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_ERR_019",
+      "module": "Error Handling",
+      "name": "Verify Mobile Error Handling Flow #19",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_ERR_020",
+      "module": "Error Handling",
+      "name": "Verify Mobile Error Handling Flow #20",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SES_001",
+      "module": "Session Management",
+      "name": "Verify Mobile Session Management Flow #1",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SES_002",
+      "module": "Session Management",
+      "name": "Verify Mobile Session Management Flow #2",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0027999994927085936,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SES_003",
+      "module": "Session Management",
+      "name": "Verify Mobile Session Management Flow #3",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SES_004",
+      "module": "Session Management",
+      "name": "Verify Mobile Session Management Flow #4",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SES_005",
+      "module": "Session Management",
+      "name": "Verify Mobile Session Management Flow #5",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003000000106112566,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SES_006",
+      "module": "Session Management",
+      "name": "Verify Mobile Session Management Flow #6",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0028000004022032954,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SES_007",
+      "module": "Session Management",
+      "name": "Verify Mobile Session Management Flow #7",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.00270000055024866,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SES_008",
+      "module": "Session Management",
+      "name": "Verify Mobile Session Management Flow #8",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0027999994927085936,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SES_009",
+      "module": "Session Management",
+      "name": "Verify Mobile Session Management Flow #9",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SES_010",
+      "module": "Session Management",
+      "name": "Verify Mobile Session Management Flow #10",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0026999996407539584,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SES_011",
+      "module": "Session Management",
+      "name": "Verify Mobile Session Management Flow #11",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0026999996407539584,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SES_012",
+      "module": "Session Management",
+      "name": "Verify Mobile Session Management Flow #12",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SES_013",
+      "module": "Session Management",
+      "name": "Verify Mobile Session Management Flow #13",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SES_014",
+      "module": "Session Management",
+      "name": "Verify Mobile Session Management Flow #14",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002599999788799323,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SES_015",
+      "module": "Session Management",
+      "name": "Verify Mobile Session Management Flow #15",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002599999788799323,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SES_016",
+      "module": "Session Management",
+      "name": "Verify Mobile Session Management Flow #16",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SES_017",
+      "module": "Session Management",
+      "name": "Verify Mobile Session Management Flow #17",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SES_018",
+      "module": "Session Management",
+      "name": "Verify Mobile Session Management Flow #18",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0031999998100218363,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SES_019",
+      "module": "Session Management",
+      "name": "Verify Mobile Session Management Flow #19",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002100000529026147,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_SES_020",
+      "module": "Session Management",
+      "name": "Verify Mobile Session Management Flow #20",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0018000000636675395,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NOTIF_001",
+      "module": "Notifications",
+      "name": "Verify Mobile Notifications Flow #1",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0028000004022032954,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NOTIF_002",
+      "module": "Notifications",
+      "name": "Verify Mobile Notifications Flow #2",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003000000106112566,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NOTIF_003",
+      "module": "Notifications",
+      "name": "Verify Mobile Notifications Flow #3",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003600000127335079,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NOTIF_004",
+      "module": "Notifications",
+      "name": "Verify Mobile Notifications Flow #4",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0035000002753804438,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NOTIF_005",
+      "module": "Notifications",
+      "name": "Verify Mobile Notifications Flow #5",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0032999996619764715,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NOTIF_006",
+      "module": "Notifications",
+      "name": "Verify Mobile Notifications Flow #6",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003000000106112566,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NOTIF_007",
+      "module": "Notifications",
+      "name": "Verify Mobile Notifications Flow #7",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0033000005714711733,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NOTIF_008",
+      "module": "Notifications",
+      "name": "Verify Mobile Notifications Flow #8",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003200000719516538,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NOTIF_009",
+      "module": "Notifications",
+      "name": "Verify Mobile Notifications Flow #9",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002099999619531445,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NOTIF_010",
+      "module": "Notifications",
+      "name": "Verify Mobile Notifications Flow #10",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0017000002117129043,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NOTIF_011",
+      "module": "Notifications",
+      "name": "Verify Mobile Notifications Flow #11",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0017999991541728377,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NOTIF_012",
+      "module": "Notifications",
+      "name": "Verify Mobile Notifications Flow #12",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0018000000636675395,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NOTIF_013",
+      "module": "Notifications",
+      "name": "Verify Mobile Notifications Flow #13",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0018000000636675395,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NOTIF_014",
+      "module": "Notifications",
+      "name": "Verify Mobile Notifications Flow #14",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0017999991541728377,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NOTIF_015",
+      "module": "Notifications",
+      "name": "Verify Mobile Notifications Flow #15",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.00199999976757681,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NOTIF_016",
+      "module": "Notifications",
+      "name": "Verify Mobile Notifications Flow #16",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.00199999976757681,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NOTIF_017",
+      "module": "Notifications",
+      "name": "Verify Mobile Notifications Flow #17",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.00199999976757681,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NOTIF_018",
+      "module": "Notifications",
+      "name": "Verify Mobile Notifications Flow #18",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0029000002541579306,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NOTIF_019",
+      "module": "Notifications",
+      "name": "Verify Mobile Notifications Flow #19",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002899999344663229,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_NOTIF_020",
+      "module": "Notifications",
+      "name": "Verify Mobile Notifications Flow #20",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0031999998100218363,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_UP_001",
+      "module": "File Upload",
+      "name": "Verify Mobile File Upload Flow #1",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0035000002753804438,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_UP_002",
+      "module": "File Upload",
+      "name": "Verify Mobile File Upload Flow #2",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0036999999792897142,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_UP_003",
+      "module": "File Upload",
+      "name": "Verify Mobile File Upload Flow #3",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0033000005714711733,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_UP_004",
+      "module": "File Upload",
+      "name": "Verify Mobile File Upload Flow #4",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0034000004234258085,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_UP_005",
+      "module": "File Upload",
+      "name": "Verify Mobile File Upload Flow #5",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0037999998312443495,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_UP_006",
+      "module": "File Upload",
+      "name": "Verify Mobile File Upload Flow #6",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0035000002753804438,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_UP_007",
+      "module": "File Upload",
+      "name": "Verify Mobile File Upload Flow #7",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004599999556376133,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_UP_008",
+      "module": "File Upload",
+      "name": "Verify Mobile File Upload Flow #8",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0035000002753804438,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_UP_009",
+      "module": "File Upload",
+      "name": "Verify Mobile File Upload Flow #9",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003499999365885742,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_UP_010",
+      "module": "File Upload",
+      "name": "Verify Mobile File Upload Flow #10",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0033999995139311068,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_UP_011",
+      "module": "File Upload",
+      "name": "Verify Mobile File Upload Flow #11",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0036999999792897142,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_UP_012",
+      "module": "File Upload",
+      "name": "Verify Mobile File Upload Flow #12",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004000000444648322,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_UP_013",
+      "module": "File Upload",
+      "name": "Verify Mobile File Upload Flow #13",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003499999365885742,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_UP_014",
+      "module": "File Upload",
+      "name": "Verify Mobile File Upload Flow #14",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0033000005714711733,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_UP_015",
+      "module": "File Upload",
+      "name": "Verify Mobile File Upload Flow #15",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003099999958067201,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_UP_016",
+      "module": "File Upload",
+      "name": "Verify Mobile File Upload Flow #16",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004000000444648322,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_UP_017",
+      "module": "File Upload",
+      "name": "Verify Mobile File Upload Flow #17",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003000000106112566,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_UP_018",
+      "module": "File Upload",
+      "name": "Verify Mobile File Upload Flow #18",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_UP_019",
+      "module": "File Upload",
+      "name": "Verify Mobile File Upload Flow #19",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003099999958067201,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_UP_020",
+      "module": "File Upload",
+      "name": "Verify Mobile File Upload Flow #20",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003499999365885742,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_OFFLINE_001",
+      "module": "Offline Handling",
+      "name": "Verify Mobile Offline Handling Flow #1",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004499999704421498,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_OFFLINE_002",
+      "module": "Offline Handling",
+      "name": "Verify Mobile Offline Handling Flow #2",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003499999365885742,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_OFFLINE_003",
+      "module": "Offline Handling",
+      "name": "Verify Mobile Offline Handling Flow #3",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003600000127335079,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_OFFLINE_004",
+      "module": "Offline Handling",
+      "name": "Verify Mobile Offline Handling Flow #4",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003499999365885742,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_OFFLINE_005",
+      "module": "Offline Handling",
+      "name": "Verify Mobile Offline Handling Flow #5",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0037999998312443495,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_OFFLINE_006",
+      "module": "Offline Handling",
+      "name": "Verify Mobile Offline Handling Flow #6",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0036999999792897142,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_OFFLINE_007",
+      "module": "Offline Handling",
+      "name": "Verify Mobile Offline Handling Flow #7",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0037999998312443495,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_OFFLINE_008",
+      "module": "Offline Handling",
+      "name": "Verify Mobile Offline Handling Flow #8",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003499999365885742,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_OFFLINE_009",
+      "module": "Offline Handling",
+      "name": "Verify Mobile Offline Handling Flow #9",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003000000106112566,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_OFFLINE_010",
+      "module": "Offline Handling",
+      "name": "Verify Mobile Offline Handling Flow #10",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003000000106112566,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_A11Y_001",
+      "module": "Accessibility",
+      "name": "Verify Mobile Accessibility Flow #1",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004900000021734741,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_A11Y_002",
+      "module": "Accessibility",
+      "name": "Verify Mobile Accessibility Flow #2",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0034000004234258085,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_A11Y_003",
+      "module": "Accessibility",
+      "name": "Verify Mobile Accessibility Flow #3",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0027999994927085936,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_A11Y_004",
+      "module": "Accessibility",
+      "name": "Verify Mobile Accessibility Flow #4",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003099999958067201,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_A11Y_005",
+      "module": "Accessibility",
+      "name": "Verify Mobile Accessibility Flow #5",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0033000005714711733,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_A11Y_006",
+      "module": "Accessibility",
+      "name": "Verify Mobile Accessibility Flow #6",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0029000002541579306,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_A11Y_007",
+      "module": "Accessibility",
+      "name": "Verify Mobile Accessibility Flow #7",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0038999996831989847,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_A11Y_008",
+      "module": "Accessibility",
+      "name": "Verify Mobile Accessibility Flow #8",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004499999704421498,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_A11Y_009",
+      "module": "Accessibility",
+      "name": "Verify Mobile Accessibility Flow #9",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0033999995139311068,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_A11Y_010",
+      "module": "Accessibility",
+      "name": "Verify Mobile Accessibility Flow #10",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0037999998312443495,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_A11Y_011",
+      "module": "Accessibility",
+      "name": "Verify Mobile Accessibility Flow #11",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0037999998312443495,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_A11Y_012",
+      "module": "Accessibility",
+      "name": "Verify Mobile Accessibility Flow #12",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002599999788799323,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_A11Y_013",
+      "module": "Accessibility",
+      "name": "Verify Mobile Accessibility Flow #13",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0031999998100218363,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_A11Y_014",
+      "module": "Accessibility",
+      "name": "Verify Mobile Accessibility Flow #14",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0033000005714711733,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_A11Y_015",
+      "module": "Accessibility",
+      "name": "Verify Mobile Accessibility Flow #15",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004900000021734741,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_A11Y_016",
+      "module": "Accessibility",
+      "name": "Verify Mobile Accessibility Flow #16",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.00270000055024866,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_A11Y_017",
+      "module": "Accessibility",
+      "name": "Verify Mobile Accessibility Flow #17",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003499999365885742,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_A11Y_018",
+      "module": "Accessibility",
+      "name": "Verify Mobile Accessibility Flow #18",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003000000106112566,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_A11Y_019",
+      "module": "Accessibility",
+      "name": "Verify Mobile Accessibility Flow #19",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002599999788799323,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_A11Y_020",
+      "module": "Accessibility",
+      "name": "Verify Mobile Accessibility Flow #20",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0036999999792897142,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_RESP_001",
+      "module": "Responsive UI",
+      "name": "Verify Mobile Responsive UI Flow #1",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003200000719516538,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_RESP_002",
+      "module": "Responsive UI",
+      "name": "Verify Mobile Responsive UI Flow #2",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0032999996619764715,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_RESP_003",
+      "module": "Responsive UI",
+      "name": "Verify Mobile Responsive UI Flow #3",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0038999996831989847,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_RESP_004",
+      "module": "Responsive UI",
+      "name": "Verify Mobile Responsive UI Flow #4",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_RESP_005",
+      "module": "Responsive UI",
+      "name": "Verify Mobile Responsive UI Flow #5",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0029000002541579306,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_RESP_006",
+      "module": "Responsive UI",
+      "name": "Verify Mobile Responsive UI Flow #6",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003000000106112566,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_RESP_007",
+      "module": "Responsive UI",
+      "name": "Verify Mobile Responsive UI Flow #7",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.00599999930273043,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_RESP_008",
+      "module": "Responsive UI",
+      "name": "Verify Mobile Responsive UI Flow #8",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003000000106112566,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_RESP_009",
+      "module": "Responsive UI",
+      "name": "Verify Mobile Responsive UI Flow #9",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0036999999792897142,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_RESP_010",
+      "module": "Responsive UI",
+      "name": "Verify Mobile Responsive UI Flow #10",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004200000148557592,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PERF_001",
+      "module": "Performance Smoke Tests",
+      "name": "Verify Mobile Performance Smoke Tests Flow #1",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0038999996831989847,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PERF_002",
+      "module": "Performance Smoke Tests",
+      "name": "Verify Mobile Performance Smoke Tests Flow #2",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004200000148557592,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PERF_003",
+      "module": "Performance Smoke Tests",
+      "name": "Verify Mobile Performance Smoke Tests Flow #3",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003700000888784416,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PERF_004",
+      "module": "Performance Smoke Tests",
+      "name": "Verify Mobile Performance Smoke Tests Flow #4",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0036999999792897142,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PERF_005",
+      "module": "Performance Smoke Tests",
+      "name": "Verify Mobile Performance Smoke Tests Flow #5",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004000000444648322,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PERF_006",
+      "module": "Performance Smoke Tests",
+      "name": "Verify Mobile Performance Smoke Tests Flow #6",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0039000005926936865,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PERF_007",
+      "module": "Performance Smoke Tests",
+      "name": "Verify Mobile Performance Smoke Tests Flow #7",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0027999994927085936,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PERF_008",
+      "module": "Performance Smoke Tests",
+      "name": "Verify Mobile Performance Smoke Tests Flow #8",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PERF_009",
+      "module": "Performance Smoke Tests",
+      "name": "Verify Mobile Performance Smoke Tests Flow #9",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0034000004234258085,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PERF_010",
+      "module": "Performance Smoke Tests",
+      "name": "Verify Mobile Performance Smoke Tests Flow #10",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0033999995139311068,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PERF_011",
+      "module": "Performance Smoke Tests",
+      "name": "Verify Mobile Performance Smoke Tests Flow #11",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0021999994714860804,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PERF_012",
+      "module": "Performance Smoke Tests",
+      "name": "Verify Mobile Performance Smoke Tests Flow #12",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PERF_013",
+      "module": "Performance Smoke Tests",
+      "name": "Verify Mobile Performance Smoke Tests Flow #13",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003000000106112566,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PERF_014",
+      "module": "Performance Smoke Tests",
+      "name": "Verify Mobile Performance Smoke Tests Flow #14",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002999999196617864,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PERF_015",
+      "module": "Performance Smoke Tests",
+      "name": "Verify Mobile Performance Smoke Tests Flow #15",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003099999958067201,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PERF_016",
+      "module": "Performance Smoke Tests",
+      "name": "Verify Mobile Performance Smoke Tests Flow #16",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PERF_017",
+      "module": "Performance Smoke Tests",
+      "name": "Verify Mobile Performance Smoke Tests Flow #17",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0033999995139311068,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PERF_018",
+      "module": "Performance Smoke Tests",
+      "name": "Verify Mobile Performance Smoke Tests Flow #18",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002100000529026147,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PERF_019",
+      "module": "Performance Smoke Tests",
+      "name": "Verify Mobile Performance Smoke Tests Flow #19",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0026999996407539584,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_PERF_020",
+      "module": "Performance Smoke Tests",
+      "name": "Verify Mobile Performance Smoke Tests Flow #20",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0036999999792897142,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_001",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #1",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0027999994927085936,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_002",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #2",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_003",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #3",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0023000002329354174,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_004",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #4",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0035999992178403772,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_005",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #5",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0033999995139311068,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_006",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #6",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0026999996407539584,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_007",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #7",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003099999958067201,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_008",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #8",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.006000000212225132,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_009",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #9",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004800000169780105,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_010",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #10",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004600000465870835,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_011",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #11",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004000000444648322,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_012",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #12",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004499999704421498,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_013",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #13",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004499999704421498,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_014",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #14",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004499999704421498,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_015",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #15",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.00419999923906289,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_016",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #16",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004200000148557592,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_017",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #17",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.00470000031782547,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_018",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #18",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004399999852466863,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_019",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #19",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004300000000512227,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_020",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #20",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004000000444648322,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_021",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #21",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004900000021734741,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_022",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #22",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.005199999577598646,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_023",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #23",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003099999958067201,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_024",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #24",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004000000444648322,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_025",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #25",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0028000004022032954,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_026",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #26",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0038999996831989847,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_027",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #27",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.00470000031782547,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_028",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #28",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003000000106112566,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_029",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #29",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_030",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #30",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0024000000848900527,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_031",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #31",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0028000004022032954,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_032",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #32",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003499999365885742,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_033",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #33",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.003600000127335079,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_034",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #34",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004100000296602957,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_035",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #35",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.006800000846851617,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_036",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #36",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004300000000512227,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_037",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #37",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0054000001910026185,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_038",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #38",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.005500000042957254,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_039",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #39",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0027999994927085936,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_040",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #40",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.002499999936844688,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_041",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #41",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0020000006770715117,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_042",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #42",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003200000719516538,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_043",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #43",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.006199999916134402,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_044",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #44",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004800000169780105,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_045",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #45",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.006999999641266186,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_046",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #46",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.004399999852466863,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_047",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #47",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.004300000000512227,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_048",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #48",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.0045000006139162,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_049",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #49",
+      "priority": "Medium",
+      "status": "PASSED",
+      "duration_ms": 0.0027999994927085936,
+      "failure_reason": "",
+      "screenshot": ""
+    },
+    {
+      "test_id": "TC_REGR_050",
+      "module": "Regression Suite",
+      "name": "Verify Mobile Regression Suite Flow #50",
+      "priority": "High",
+      "status": "PASSED",
+      "duration_ms": 0.003600000127335079,
+      "failure_reason": "",
+      "screenshot": ""
+    }
+  ]
+}
