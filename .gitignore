@@ -2,6 +2,10 @@
 .env
 .env*.local
 
+# SQLite Temp WAL Files
+*.db-wal
+*.db-shm
+
 # Virtual Environments
 docking_env/
 env/

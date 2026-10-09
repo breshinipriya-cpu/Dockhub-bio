@@ -1,0 +1,62 @@
+{
+  "users": [
+    {
+      "id": "USR-001",
+      "email": "admin@dockhub.bio",
+      "password": "Password123!",
+      "role": "Administrator",
+      "expected_status": "success"
+    },
+    {
+      "id": "USR-002",
+      "email": "analyst@dockhub.bio",
+      "password": "Password123!",
+      "role": "Analyst",
+      "expected_status": "success"
+    },
+    {
+      "id": "USR-003",
+      "email": "user@dockhub.bio",
+      "password": "Password123!",
+      "role": "User",
+      "expected_status": "success"
+    },
+    {
+      "id": "USR-004",
+      "email": "invalid@dockhub.bio",
+      "password": "123",
+      "role": "User",
+      "expected_status": "error"
+    }
+  ],
+  "incidents": [
+    {
+      "title": "SQL Injection Pattern Detected",
+      "desc": "Automated WAF flag on /api/query endpoint.",
+      "severity": "Critical"
+    },
+    {
+      "title": "Brute Force Auth Attempt",
+      "desc": "Multiple failed attempts from IP 192.168.1.105",
+      "severity": "High"
+    },
+    {
+      "title": "Port Scan Telemetry",
+      "desc": "Reconnaissance scan detected on port 443.",
+      "severity": "Medium"
+    },
+    {
+      "title": "Routine Access Audit Log",
+      "desc": "Scheduled automated compliance check.",
+      "severity": "Low"
+    }
+  ],
+  "navigation_sections": [
+    "dashboard",
+    "auth",
+    "incident",
+    "alerts",
+    "upload",
+    "reports"
+  ]
+}

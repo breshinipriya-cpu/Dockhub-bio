@@ -1,0 +1,20 @@
+{
+  "target_url": "http://localhost:8000",
+  "virtual_users": 100,
+  "duration_seconds": 61.01,
+  "total_requests": 33097,
+  "successful_requests": 23283,
+  "failed_requests": 9814,
+  "requests_per_second_rps": 542.5,
+  "success_rate_pct": 70.35,
+  "failure_rate_pct": 29.65,
+  "response_time_ms": {
+    "min": 11.59,
+    "avg": 165.8,
+    "median_p50": 152.54,
+    "p90": 277.34,
+    "p95": 317.14,
+    "p99": 385.57,
+    "max": 492.93
+  }
+}

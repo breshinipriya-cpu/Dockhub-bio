@@ -1,0 +1,8 @@
+2026-10-09 09:20:55,696 - [INFO] - AutomationFramework - =================================================================
+2026-10-09 09:20:55,697 - [INFO] - AutomationFramework -   PHASE 7 — LIVE GITHUB PAGES E2E AUTOMATION & DEPLOYMENT TEST  
+2026-10-09 09:20:55,697 - [INFO] - AutomationFramework - =================================================================
+2026-10-09 09:20:55,697 - [INFO] - AutomationFramework - Target Base URL: https://breshinipriya-cpu.github.io/Dockhub-bio/
+2026-10-09 09:20:55,698 - [INFO] - AutomationFramework - Step 1: Running Live Deployment Verification...
+2026-10-09 09:20:55,699 - [INFO] - AutomationFramework - Verifying live deployment availability at: https://breshinipriya-cpu.github.io/Dockhub-bio/
+2026-10-09 09:20:58,602 - [INFO] - AutomationFramework - [Attempt 1/12] Status code: 404
+2026-10-09 09:21:09,272 - [INFO] - AutomationFramework - [Attempt 2/12] Status code: 404
