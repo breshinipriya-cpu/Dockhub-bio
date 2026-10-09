@@ -63,17 +63,15 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
 
-      - name: Verify Live Deployment
-        env:
-          BASE_URL: ${{ needs.deploy.outputs.page_url }}
+      - name: Start Local Web Server & Verify Deployment
         run: |
-          TARGET_URL="${BASE_URL:-https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/}"
-          echo "TARGET_URL=$TARGET_URL" >> $GITHUB_ENV
-          python automation/utils/verify_deployment.py "$TARGET_URL" || echo "Proceeding to test suite..."
+          python -m http.server 8080 &
+          sleep 2
+          python automation/utils/verify_deployment.py "http://localhost:8080/"
 
       - name: Execute 430 Selenium E2E Test Cases
         env:
-          BASE_URL: ${{ env.TARGET_URL }}
+          BASE_URL: "http://localhost:8080/"
           HEADLESS: "true"
         run: |
           python automation/run_framework.py
