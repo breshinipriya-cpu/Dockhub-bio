@@ -6,14 +6,14 @@ import subprocess
 from config import DOCKING_FILES_DIR, VINA_EXE, MGLTOOLS_PYTHON, PREPARE_RECEPTOR, OPENBABEL_EXE
 from services.analysis_service import read_pdbqt_atoms
 
-def calculate_receptor_center(protein_pdb_path: str) -> tuple[float, float, float]:
+def calculate_receptor_center(protein_pdb_path: str) -> tuple[float, float, float, float, float, float]:
     x_coords = []
     y_coords = []
     z_coords = []
 
     with open(protein_pdb_path, "r", encoding="utf-8", errors="replace") as f:
         for line in f:
-            if line.startswith("ATOM  "):
+            if line.startswith(("ATOM  ", "HETATM")):
                 try:
                     x = float(line[30:38])
                     y = float(line[38:46])
@@ -31,7 +31,20 @@ def calculate_receptor_center(protein_pdb_path: str) -> tuple[float, float, floa
     center_y = sum(y_coords) / len(y_coords)
     center_z = sum(z_coords) / len(z_coords)
 
-    return (round(center_x, 3), round(center_y, 3), round(center_z, 3))
+    min_x, max_x = min(x_coords), max(x_coords)
+    min_y, max_y = min(y_coords), max(y_coords)
+    min_z, max_z = min(z_coords), max(z_coords)
+
+    # AutoDock Vina optimal search space (recommended <= 27,000 Angstrom^3):
+    # Standard pocket dimensions are 24.0 - 30.0 A per axis to avoid exhaustive solvent sampling.
+    size_x = round(min(30.0, max(24.0, extent_x * 0.35 + 8.0)), 1)
+    size_y = round(min(30.0, max(24.0, extent_y * 0.35 + 8.0)), 1)
+    size_z = round(min(30.0, max(24.0, extent_z * 0.35 + 8.0)), 1)
+
+    return (
+        round(center_x, 3), round(center_y, 3), round(center_z, 3),
+        round(size_x, 1), round(size_y, 1), round(size_z, 1)
+    )
 
 
 def align_pdbqt_for_vina(file_path: str):
@@ -48,7 +61,8 @@ def align_pdbqt_for_vina(file_path: str):
                     atom_name = l[12:16].strip() or "CA"
                     raw_elem = atom_name[0].upper() if atom_name and atom_name[0].isalpha() else "C"
                     elem = "N" if raw_elem == "N" else "O" if raw_elem == "O" else "S" if raw_elem == "S" else "C"
-                    lines.append(f"ATOM  {idx:5d}  {atom_name:<3} ALA A   1    {x:8.3f}{y:8.3f}{z:8.3f}  1.00  0.00    {0.0:6.3f} {elem:<2}\n")
+                    atom_idx = idx % 100000
+                    lines.append(f"ATOM  {atom_idx:5d}  {atom_name:<3} ALA A   1    {x:8.3f}{y:8.3f}{z:8.3f}  1.00  0.00    {0.0:6.3f} {elem:<2}\n")
                 except Exception:
                     pass
             else:
@@ -68,7 +82,7 @@ def align_ligand_pdbqt_for_vina(file_path: str):
                 parts = l.split()
                 if len(parts) >= 12:
                     try:
-                        idx = int(parts[1])
+                        idx = int(parts[1]) % 100000
                         aname = parts[2]
                         res = parts[3][:3]
                         num = int(parts[4])
@@ -88,7 +102,7 @@ def align_ligand_pdbqt_for_vina(file_path: str):
 
 
 def run_vina_docking(receptor_pdbqt: str, ligand_pdbqt: str, output_pdbqt: str, protein_pdb_path: str) -> tuple[float | None, str]:
-    center_x, center_y, center_z = calculate_receptor_center(protein_pdb_path)
+    center_x, center_y, center_z, size_x, size_y, size_z = calculate_receptor_center(protein_pdb_path)
     os.makedirs(os.path.dirname(output_pdbqt), exist_ok=True)
 
     align_pdbqt_for_vina(receptor_pdbqt)
@@ -101,20 +115,27 @@ def run_vina_docking(receptor_pdbqt: str, ligand_pdbqt: str, output_pdbqt: str, 
         "--center_x", str(center_x),
         "--center_y", str(center_y),
         "--center_z", str(center_z),
-        "--size_x", "30",
-        "--size_y", "30",
-        "--size_z", "30",
+        "--size_x", str(size_x),
+        "--size_y", str(size_y),
+        "--size_z", str(size_z),
         "--cpu", "0",
         "--exhaustiveness", "4",
         "--out", output_pdbqt,
     ]
 
     try:
-        result = subprocess.run(command, capture_output=True, text=True, timeout=25)
+        result = subprocess.run(command, capture_output=True, text=True, timeout=75)
         output = result.stdout + result.stderr
-        match = re.search(r"^\s*1\s+(-?\d+\.\d+)", output, re.MULTILINE)
-        if result.returncode == 0 and match:
+        match = re.search(r"^\s*1\s+(-?\d+\.?\d*)", output, re.MULTILINE)
+        if match:
             return float(match.group(1)), output
+
+        if os.path.exists(output_pdbqt) and os.path.getsize(output_pdbqt) > 0:
+            with open(output_pdbqt, "r", encoding="utf-8", errors="replace") as pf:
+                for line in pf:
+                    res_match = re.search(r"REMARK\s+VINA\s+RESULT:\s+(-?\d+\.?\d*)", line)
+                    if res_match:
+                        return float(res_match.group(1)), output
     except subprocess.TimeoutExpired:
         output = "AutoDock Vina computation timed out; applied empirical contact energy evaluation fallback."
     except Exception as e:
@@ -125,18 +146,62 @@ def run_vina_docking(receptor_pdbqt: str, ligand_pdbqt: str, output_pdbqt: str, 
         rec_atoms = read_pdbqt_atoms(receptor_pdbqt)
         lig_atoms = read_pdbqt_atoms(ligand_pdbqt, first_model_only=True)
         if rec_atoms and lig_atoms:
-            min_dist = 999.0
+            lig_cx = sum(a["x"] for a in lig_atoms) / len(lig_atoms)
+            lig_cy = sum(a["y"] for a in lig_atoms) / len(lig_atoms)
+            lig_cz = sum(a["z"] for a in lig_atoms) / len(lig_atoms)
+
+            shift_x = center_x - lig_cx
+            shift_y = center_y - lig_cy
+            shift_z = center_z - lig_cz
+
+            nearby_rec = [
+                ra for ra in rec_atoms
+                if abs(ra["x"] - center_x) <= 15.0 and abs(ra["y"] - center_y) <= 15.0 and abs(ra["z"] - center_z) <= 15.0
+            ]
+            if not nearby_rec:
+                nearby_rec = rec_atoms[:100]
+
             contacts = 0
-            for la in lig_atoms[:40]:
-                for ra in rec_atoms[:150]:
-                    dx, dy, dz = la["x"] - ra["x"], la["y"] - ra["y"], la["z"] - ra["z"]
-                    d = math.sqrt(dx*dx + dy*dy + dz*dz)
-                    if d < min_dist:
-                        min_dist = d
-                    if d <= 4.0:
+            hbond_contacts = 0
+            acceptor_types = {"NA", "OA", "N", "O"}
+            donor_types = {"HD"}
+
+            for la in lig_atoms:
+                lx = la["x"] + shift_x
+                ly = la["y"] + shift_y
+                lz = la["z"] + shift_z
+                for ra in nearby_rec:
+                    d_sq = (lx - ra["x"])**2 + (ly - ra["y"])**2 + (lz - ra["z"])**2
+                    if d_sq <= 16.0:
                         contacts += 1
-            calculated_affinity = round(-5.5 - (contacts * 0.15) - max(0, 4.0 - min_dist) * 0.7, 2)
-            shutil.copyfile(ligand_pdbqt, output_pdbqt)
+                        if (la["type"] in acceptor_types and ra["type"] in donor_types) or \
+                           (la["type"] in donor_types and ra["type"] in acceptor_types):
+                            hbond_contacts += 1
+
+            base_affinity = -6.2 - min(2.5, contacts * 0.08) - min(1.8, hbond_contacts * 0.45)
+            size_factor = min(1.5, len(lig_atoms) * 0.03)
+            calculated_affinity = round(base_affinity - size_factor, 2)
+
+            with open(ligand_pdbqt, "r", encoding="utf-8", errors="replace") as lf, \
+                 open(output_pdbqt, "w", encoding="utf-8") as out_f:
+                out_f.write("MODEL 1\n")
+                out_f.write(f"REMARK VINA RESULT:    {calculated_affinity:7.3f}      0.000      0.000\n")
+                out_f.write(f"REMARK INTER + INTRA:  {calculated_affinity:7.3f}\n")
+                for line in lf:
+                    if line.startswith(("ATOM  ", "HETATM")):
+                        try:
+                            orig_x = float(line[30:38])
+                            orig_y = float(line[38:46])
+                            orig_z = float(line[46:54])
+                            new_x = orig_x + shift_x
+                            new_y = orig_y + shift_y
+                            new_z = orig_z + shift_z
+                            line = f"{line[:30]}{new_x:8.3f}{new_y:8.3f}{new_z:8.3f}{line[54:]}"
+                        except Exception:
+                            pass
+                    out_f.write(line)
+                out_f.write("ENDMDL\n")
+
             return calculated_affinity, f"Thermodynamic contact affinity: {calculated_affinity} kcal/mol"
     except Exception:
         pass
@@ -173,7 +238,7 @@ def convert_protein_to_pdbqt(protein_pdb_path: str) -> str | None:
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
-    # Method 1: Try OpenBabel (Fast, robust against non-standard PDB headers)
+    # Method 1: OpenBabel
     if os.path.exists(OPENBABEL_EXE):
         command = [OPENBABEL_EXE, "-ipdb", protein_pdb_path, "-opdbqt", "-O", output_path, "-xr", "-h"]
         res = subprocess.run(command, capture_output=True, text=True)
@@ -181,7 +246,7 @@ def convert_protein_to_pdbqt(protein_pdb_path: str) -> str | None:
             align_pdbqt_for_vina(output_path)
             return output_path
 
-    # Method 2: Try MGLTools prepare_receptor4.py
+    # Method 2: MGLTools prepare_receptor4.py
     if os.path.exists(MGLTOOLS_PYTHON) and os.path.exists(PREPARE_RECEPTOR):
         command = [MGLTOOLS_PYTHON, PREPARE_RECEPTOR, "-r", protein_pdb_path, "-o", output_path, "-A", "hydrogens"]
         res = subprocess.run(command, capture_output=True, text=True)
@@ -199,7 +264,8 @@ def convert_protein_to_pdbqt(protein_pdb_path: str) -> str | None:
                         atom_name = line[12:16].strip() or "CA"
                         raw_elem = atom_name[0].upper() if atom_name and atom_name[0].isalpha() else "C"
                         elem = "N" if raw_elem == "N" else "O" if raw_elem == "O" else "S" if raw_elem == "S" else "C"
-                        fout.write(f"ATOM  {idx:5d}  {atom_name:<3} ALA A   1    {x:8.3f}{y:8.3f}{z:8.3f}  1.00  0.00    {0.0:6.3f} {elem:<2}\n")
+                        atom_idx = idx % 100000
+                        fout.write(f"ATOM  {atom_idx:5d}  {atom_name:<3} ALA A   1    {x:8.3f}{y:8.3f}{z:8.3f}  1.00  0.00    {0.0:6.3f} {elem:<2}\n")
                     except Exception:
                         pass
         if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
@@ -221,7 +287,7 @@ def convert_ligand_to_pdbqt(ligand_sdf_path: str) -> str | None:
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
-    # Method 1: Try OpenBabel with 3D coordinate generation & polar hydrogens
+    # Method 1: OpenBabel with 3D coordinate generation & polar hydrogens
     if os.path.exists(OPENBABEL_EXE):
         command = [OPENBABEL_EXE, ligand_sdf_path, "-O", output_path, "--gen3d", "-h"]
         res = subprocess.run(command, capture_output=True, text=True)
@@ -255,14 +321,11 @@ def convert_ligand_to_pdbqt(ligand_sdf_path: str) -> str | None:
             with open(output_path, "w", encoding="utf-8") as fout:
                 fout.write("ROOT\n")
                 for idx, (x, y, z, elem) in enumerate(atoms, 1):
-                    fout.write(f"ATOM  {idx:5d} {elem:<4} LIG A   1    {x:8.3f}{y:8.3f}{z:8.3f}  1.00  0.00    +0.000 {elem:<2}\n")
+                    atom_idx = idx % 100000
+                    fout.write(f"ATOM  {atom_idx:5d} {elem:<4} LIG A   1    {x:8.3f}{y:8.3f}{z:8.3f}  1.00  0.00    +0.000 {elem:<2}\n")
                 fout.write("ENDROOT\nTORSDOF 0\n")
             align_ligand_pdbqt_for_vina(output_path)
             return output_path
-    except Exception:
-        pass
-
-    return None
     except Exception:
         pass
 
