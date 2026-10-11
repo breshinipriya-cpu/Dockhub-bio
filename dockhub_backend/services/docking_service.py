@@ -102,12 +102,20 @@ def align_ligand_pdbqt_for_vina(file_path: str):
 
 
 def run_vina_docking(receptor_pdbqt: str, ligand_pdbqt: str, output_pdbqt: str, protein_pdb_path: str) -> tuple[float | None, str]:
+    if os.path.exists(output_pdbqt) and os.path.getsize(output_pdbqt) > 100:
+        with open(output_pdbqt, "r", encoding="utf-8", errors="replace") as pf:
+            for line in pf:
+                res_match = re.search(r"REMARK\s+VINA\s+RESULT:\s+(-?\d+\.?\d*)", line)
+                if res_match:
+                    return float(res_match.group(1)), f"AutoDock Vina pose loaded from cache (Score: {res_match.group(1)} kcal/mol)"
+
     center_x, center_y, center_z, size_x, size_y, size_z = calculate_receptor_center(protein_pdb_path)
     os.makedirs(os.path.dirname(output_pdbqt), exist_ok=True)
 
     align_pdbqt_for_vina(receptor_pdbqt)
     align_ligand_pdbqt_for_vina(ligand_pdbqt)
 
+    cpu_count = min(os.cpu_count() or 2, 2)
     command = [
         VINA_EXE,
         "--receptor", receptor_pdbqt,
@@ -118,13 +126,13 @@ def run_vina_docking(receptor_pdbqt: str, ligand_pdbqt: str, output_pdbqt: str, 
         "--size_x", str(size_x),
         "--size_y", str(size_y),
         "--size_z", str(size_z),
-        "--cpu", "0",
+        "--cpu", str(cpu_count),
         "--exhaustiveness", "4",
         "--out", output_pdbqt,
     ]
 
     try:
-        result = subprocess.run(command, capture_output=True, text=True, timeout=75)
+        result = subprocess.run(command, capture_output=True, text=True, timeout=25)
         output = result.stdout + result.stderr
         match = re.search(r"^\s*1\s+(-?\d+\.?\d*)", output, re.MULTILINE)
         if match:

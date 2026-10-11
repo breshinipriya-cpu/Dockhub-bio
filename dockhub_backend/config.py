@@ -40,4 +40,5 @@ OPENBABEL_EXE = _resolve_binary(
     r"C:\Users\user.LAPTOP\OneDrive\Desktop\OpenBabel-3.1.1\obabel.exe",
 )
 
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./dockhub_users.db")
+db_file = BACKEND_DIR / "dockhub_users.db"
+DATABASE_URL = os.getenv("DATABASE_URL", f"sqlite:///{db_file.as_posix()}")

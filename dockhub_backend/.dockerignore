@@ -7,13 +7,7 @@ __pycache__
 .gitignore
 *.db-shm
 *.db-wal
-docking_files/proteins/*
-docking_files/ligands/*
-docking_files/pdbqt/*
-docking_files/results/*
-!docking_files/proteins/.gitkeep
-!docking_files/ligands/.gitkeep
-!docking_files/pdbqt/.gitkeep
-!docking_files/results/.gitkeep
+# Preserve precomputed docking files in container for instant responses
+# docking_files/ is preserved
 load_test.py
 load_test_results.json

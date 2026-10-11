@@ -597,6 +597,17 @@ COMMON_PROTEIN_ALIASES = {
 }
 
 COMMON_LIGAND_ALIASES = {
+    "estradiol": 5757,
+    "tamoxifen": 2733526,
+    "indinavir": 392622,
+    "methotrexate": 126941,
+    "erlotinib": 176870,
+    "donepezil": 3152,
+    "oseltamivir": 65028,
+    "simvastatin": 54454,
+    "sitagliptin": 4369359,
+    "ciprofloxacin": 2764,
+    "vemurafenib": 42611257,
     "rapamycin": 5284616,
     "sirolimus": 5284616,
     "aspirin": 2244,
@@ -657,12 +668,21 @@ def calculate_receptor_center(protein_pdb_path):
     )
 
 def run_vina_docking(receptor_pdbqt, ligand_pdbqt, output_pdbqt, protein_pdb_path):
+    # FAST CACHE: If output_pdbqt was previously generated, extract score directly
+    if os.path.exists(output_pdbqt) and os.path.getsize(output_pdbqt) > 100:
+        with open(output_pdbqt, "r", encoding="utf-8", errors="replace") as pf:
+            for line in pf:
+                res_match = re.search(r"REMARK\s+VINA\s+RESULT:\s+(-?\d+\.?\d*)", line)
+                if res_match:
+                    return float(res_match.group(1)), f"AutoDock Vina pose loaded from cache (Score: {res_match.group(1)} kcal/mol)"
+
     center_x, center_y, center_z, size_x, size_y, size_z = calculate_receptor_center(protein_pdb_path)
     os.makedirs(os.path.dirname(output_pdbqt), exist_ok=True)
 
     align_pdbqt_for_vina(receptor_pdbqt)
     align_ligand_pdbqt_for_vina(ligand_pdbqt)
 
+    cpu_count = min(os.cpu_count() or 2, 2)
     command = [
         VINA_EXE,
         "--receptor", receptor_pdbqt,
@@ -673,13 +693,13 @@ def run_vina_docking(receptor_pdbqt, ligand_pdbqt, output_pdbqt, protein_pdb_pat
         "--size_x", str(size_x),
         "--size_y", str(size_y),
         "--size_z", str(size_z),
-        "--cpu", "0",
+        "--cpu", str(cpu_count),
         "--exhaustiveness", "4",
         "--out", output_pdbqt,
     ]
 
     try:
-        result = subprocess.run(command, capture_output=True, text=True, timeout=75)
+        result = subprocess.run(command, capture_output=True, text=True, timeout=25)
         output = result.stdout + result.stderr
         match = re.search(r"^\s*1\s+(-?\d+\.?\d*)", output, re.MULTILINE)
 
@@ -884,21 +904,80 @@ def search_pdb_ids(query, limit=5):
     return ["1ERE"] if "estrogen" in q_lower else ["4DFR"] if "dhfr" in q_lower or "reductase" in q_lower else ["1A3N"]
 
 
+_PROTEIN_METADATA_CACHE: dict[str, dict] = {
+    "1ERE": {
+        "pdb_id": "1ERE",
+        "protein_name": "Human Estrogen Receptor Alpha Ligand-Binding Domain",
+        "organism": "Homo sapiens",
+        "experimental_method": "X-Ray Diffraction",
+        "resolution": "3.1 Å",
+    },
+    "1HSG": {
+        "pdb_id": "1HSG",
+        "protein_name": "HIV-1 Protease Complexed with Indinavir",
+        "organism": "Human immunodeficiency virus 1",
+        "experimental_method": "X-Ray Diffraction",
+        "resolution": "2.0 Å",
+    },
+    "4DFR": {
+        "pdb_id": "4DFR",
+        "protein_name": "Dihydrofolate Reductase",
+        "organism": "Escherichia coli",
+        "experimental_method": "X-Ray Diffraction",
+        "resolution": "1.7 Å",
+    },
+    "6LU7": {
+        "pdb_id": "6LU7",
+        "protein_name": "SARS-CoV-2 Main Protease",
+        "organism": "Severe acute respiratory syndrome coronavirus 2",
+        "experimental_method": "X-Ray Diffraction",
+        "resolution": "2.16 Å",
+    },
+    "4INS": {
+        "pdb_id": "4INS",
+        "protein_name": "2-Zinc Insulin",
+        "organism": "Sus scrofa",
+        "experimental_method": "X-Ray Diffraction",
+        "resolution": "1.5 Å",
+    },
+    "1ATP": {
+        "pdb_id": "1ATP",
+        "protein_name": "cAMP-dependent Protein Kinase",
+        "organism": "Mus musculus",
+        "experimental_method": "X-Ray Diffraction",
+        "resolution": "2.2 Å",
+    },
+    "1M17": {
+        "pdb_id": "1M17",
+        "protein_name": "EGFR Kinase Domain",
+        "organism": "Homo sapiens",
+        "experimental_method": "X-Ray Diffraction",
+        "resolution": "2.6 Å",
+    },
+}
+
+_PUBCHEM_COMPOUND_CACHE: dict[str, dict] = {}
+
+
 def get_protein_metadata(protein_id):
+    clean_id = protein_id.strip().upper()
+    if clean_id in _PROTEIN_METADATA_CACHE:
+        return _PROTEIN_METADATA_CACHE[clean_id]
+
     try:
         response = requests.get(
-            f"https://data.rcsb.org/rest/v1/core/entry/{protein_id}",
-            timeout=10,
+            f"https://data.rcsb.org/rest/v1/core/entry/{clean_id}",
+            timeout=8,
         )
         if response.status_code == 200:
             entry = response.json()
             organism = None
             entity_ids = entry.get("rcsb_entry_container_identifiers", {}).get("polymer_entity_ids", [])
-            for entity_id in entity_ids:
+            for entity_id in entity_ids[:2]:
                 try:
                     entity_response = requests.get(
-                        f"https://data.rcsb.org/rest/v1/core/polymer_entity/{protein_id}/{entity_id}",
-                        timeout=5,
+                        f"https://data.rcsb.org/rest/v1/core/polymer_entity/{clean_id}/{entity_id}",
+                        timeout=4,
                     )
                     if entity_response.status_code == 200:
                         entity = entity_response.json()
@@ -934,23 +1013,27 @@ def get_protein_metadata(protein_id):
             else:
                 resolution_str = "2.0 Å"
 
-            return {
-                "pdb_id": protein_id,
-                "protein_name": entry.get("struct", {}).get("title", f"PDB Entry {protein_id}"),
+            meta = {
+                "pdb_id": clean_id,
+                "protein_name": entry.get("struct", {}).get("title", f"PDB Entry {clean_id}"),
                 "organism": organism or "Homo sapiens",
                 "experimental_method": method_str,
                 "resolution": resolution_str,
             }
+            _PROTEIN_METADATA_CACHE[clean_id] = meta
+            return meta
     except Exception:
         pass
 
-    return {
-        "pdb_id": protein_id,
-        "protein_name": f"PDB Target Structure ({protein_id})",
+    fallback_meta = {
+        "pdb_id": clean_id,
+        "protein_name": f"PDB Target Structure ({clean_id})",
         "organism": "Homo sapiens / Standard Target Model",
         "experimental_method": "X-Ray Diffraction",
         "resolution": "2.0 Å",
     }
+    _PROTEIN_METADATA_CACHE[clean_id] = fallback_meta
+    return fallback_meta
 
 
 def get_pubchem_compound(query):
@@ -960,6 +1043,27 @@ def get_pubchem_compound(query):
 
     clean_query = re.sub(r"[^\w\s]", " ", query_str).strip()
     clean_query = " ".join(clean_query.split())
+    q_lower = clean_query.lower()
+
+    if q_lower in _PUBCHEM_COMPOUND_CACHE:
+        return _PUBCHEM_COMPOUND_CACHE[q_lower]
+
+    # Check curated aliases FIRST for instantaneous direct CID query
+    for alias, cid in COMMON_LIGAND_ALIASES.items():
+        if alias == q_lower or (len(alias) >= 4 and alias in q_lower):
+            prop_url = (
+                "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/"
+                f"cid/{cid}/property/MolecularFormula,MolecularWeight,ConnectivitySMILES,XLogP,TPSA,HBondDonorCount,HBondAcceptorCount,RotatableBondCount,Title/JSON"
+            )
+            try:
+                pr = requests.get(prop_url, timeout=6)
+                if pr.status_code == 200:
+                    props = pr.json().get("PropertyTable", {}).get("Properties", [])
+                    if props:
+                        _PUBCHEM_COMPOUND_CACHE[q_lower] = props[0]
+                        return props[0]
+            except Exception:
+                pass
 
     search_terms = [query_str, clean_query]
     if "(" in query_str:
@@ -978,10 +1082,11 @@ def get_pubchem_compound(query):
             f"{identifier}/property/MolecularFormula,MolecularWeight,ConnectivitySMILES,XLogP,TPSA,HBondDonorCount,HBondAcceptorCount,RotatableBondCount,Title/JSON"
         )
         try:
-            r = requests.get(url, timeout=8)
+            r = requests.get(url, timeout=6)
             if r.status_code == 200:
                 props = r.json().get("PropertyTable", {}).get("Properties", [])
                 if props:
+                    _PUBCHEM_COMPOUND_CACHE[q_lower] = props[0]
                     return props[0]
         except Exception:
             pass
@@ -993,7 +1098,7 @@ def get_pubchem_compound(query):
         safe_term = quote(term, safe="")
         cid_url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/{safe_term}/cids/JSON"
         try:
-            r = requests.get(cid_url, timeout=8)
+            r = requests.get(cid_url, timeout=6)
             if r.status_code == 200:
                 cids = r.json().get("IdentifierList", {}).get("CID", [])
                 if cids:
@@ -1002,30 +1107,14 @@ def get_pubchem_compound(query):
                         "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/"
                         f"cid/{first_cid}/property/MolecularFormula,MolecularWeight,ConnectivitySMILES,XLogP,TPSA,HBondDonorCount,HBondAcceptorCount,RotatableBondCount,Title/JSON"
                     )
-                    pr = requests.get(prop_url, timeout=8)
+                    pr = requests.get(prop_url, timeout=6)
                     if pr.status_code == 200:
                         props = pr.json().get("PropertyTable", {}).get("Properties", [])
                         if props:
+                            _PUBCHEM_COMPOUND_CACHE[q_lower] = props[0]
                             return props[0]
         except Exception:
             pass
-
-    # Curated alias lookup fallback
-    q_lower = clean_query.lower()
-    for alias, cid in COMMON_LIGAND_ALIASES.items():
-        if alias in q_lower:
-            prop_url = (
-                "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/"
-                f"cid/{cid}/property/MolecularFormula,MolecularWeight,ConnectivitySMILES,XLogP,TPSA,HBondDonorCount,HBondAcceptorCount,RotatableBondCount,Title/JSON"
-            )
-            try:
-                pr = requests.get(prop_url, timeout=8)
-                if pr.status_code == 200:
-                    props = pr.json().get("PropertyTable", {}).get("Properties", [])
-                    if props:
-                        return props[0]
-            except Exception:
-                pass
 
     return None
 
@@ -1264,6 +1353,23 @@ def align_ligand_pdbqt_for_vina(file_path):
         f.writelines(lines)
 
 
+def _sdf_has_3d_coordinates(sdf_path: str) -> bool:
+    try:
+        with open(sdf_path, "r", encoding="utf-8", errors="replace") as f:
+            for line in f:
+                parts = line.split()
+                if len(parts) >= 4:
+                    try:
+                        z = float(parts[2])
+                        if abs(z) > 1e-4:
+                            return True
+                    except ValueError:
+                        continue
+    except Exception:
+        pass
+    return False
+
+
 def convert_protein_to_pdbqt(protein_pdb_path):
     protein_name = os.path.splitext(os.path.basename(protein_pdb_path))[0]
     output_path = str(DOCKING_FILES_DIR / "pdbqt" / f"{protein_name}_protein.pdbqt")
@@ -1275,18 +1381,24 @@ def convert_protein_to_pdbqt(protein_pdb_path):
     # Method 1: Try OpenBabel (Fast, robust against non-standard PDB headers)
     if os.path.exists(OPENBABEL_EXE):
         command = [OPENBABEL_EXE, "-ipdb", protein_pdb_path, "-opdbqt", "-O", output_path, "-xr", "-h"]
-        res = subprocess.run(command, capture_output=True, text=True)
-        if res.returncode == 0 and os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-            align_pdbqt_for_vina(output_path)
-            return output_path
+        try:
+            res = subprocess.run(command, capture_output=True, text=True, timeout=20)
+            if res.returncode == 0 and os.path.exists(output_path) and os.path.getsize(output_path) > 0:
+                align_pdbqt_for_vina(output_path)
+                return output_path
+        except subprocess.TimeoutExpired:
+            pass
 
     # Method 2: Try MGLTools prepare_receptor4.py
     if os.path.exists(MGLTOOLS_PYTHON) and os.path.exists(PREPARE_RECEPTOR):
         command = [MGLTOOLS_PYTHON, PREPARE_RECEPTOR, "-r", protein_pdb_path, "-o", output_path, "-A", "hydrogens"]
-        res = subprocess.run(command, capture_output=True, text=True)
-        if res.returncode == 0 and os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-            align_pdbqt_for_vina(output_path)
-            return output_path
+        try:
+            res = subprocess.run(command, capture_output=True, text=True, timeout=20)
+            if res.returncode == 0 and os.path.exists(output_path) and os.path.getsize(output_path) > 0:
+                align_pdbqt_for_vina(output_path)
+                return output_path
+        except subprocess.TimeoutExpired:
+            pass
 
     # Method 3: Native Resilient PDBQT Generator
     try:
@@ -1320,22 +1432,42 @@ def convert_ligand_to_pdbqt(ligand_sdf_path):
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
-    # Method 1: Try OpenBabel with 3D coordinate generation & polar hydrogens
+    has_3d = _sdf_has_3d_coordinates(ligand_sdf_path)
+
+    # Method 1: Try OpenBabel with fast conversion
     if os.path.exists(OPENBABEL_EXE):
-        command = [OPENBABEL_EXE, ligand_sdf_path, "-O", output_path, "--gen3d", "-h"]
-        res = subprocess.run(command, capture_output=True, text=True)
-        if res.returncode == 0 and os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-            align_ligand_pdbqt_for_vina(output_path)
-            return output_path
+        if has_3d:
+            # 3D coordinates are already present in SDF: convert with -h directly (~0.25s)
+            command = [OPENBABEL_EXE, ligand_sdf_path, "-O", output_path, "-h"]
+            try:
+                res = subprocess.run(command, capture_output=True, text=True, timeout=12)
+                if res.returncode == 0 and os.path.exists(output_path) and os.path.getsize(output_path) > 0:
+                    align_ligand_pdbqt_for_vina(output_path)
+                    return output_path
+            except subprocess.TimeoutExpired:
+                pass
 
-        # Method 2: Standard OpenBabel without --gen3d
+        # 2D fallback: fast 3D generation with 15s timeout
+        command = [OPENBABEL_EXE, ligand_sdf_path, "-O", output_path, "--gen3d", "--fast", "-h"]
+        try:
+            res = subprocess.run(command, capture_output=True, text=True, timeout=15)
+            if res.returncode == 0 and os.path.exists(output_path) and os.path.getsize(output_path) > 0:
+                align_ligand_pdbqt_for_vina(output_path)
+                return output_path
+        except subprocess.TimeoutExpired:
+            pass
+
+        # Standard OpenBabel without --gen3d
         command2 = [OPENBABEL_EXE, ligand_sdf_path, "-O", output_path]
-        res2 = subprocess.run(command2, capture_output=True, text=True)
-        if res2.returncode == 0 and os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-            align_ligand_pdbqt_for_vina(output_path)
-            return output_path
+        try:
+            res2 = subprocess.run(command2, capture_output=True, text=True, timeout=10)
+            if res2.returncode == 0 and os.path.exists(output_path) and os.path.getsize(output_path) > 0:
+                align_ligand_pdbqt_for_vina(output_path)
+                return output_path
+        except subprocess.TimeoutExpired:
+            pass
 
-    # Method 3: Native Resilient Ligand PDBQT Generator from SDF coordinates
+    # Method 3: Native Resilient Ligand PDBQT Generator from SDF coordinates (instant fallback)
     try:
         atoms = []
         with open(ligand_sdf_path, "r", encoding="utf-8", errors="replace") as fin:
